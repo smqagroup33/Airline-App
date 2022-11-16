@@ -8,19 +8,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Person person1 = new Person("charles", "123 Street");
+        Person person1 = new Person("Ali", "123 Street");
         ProjectDB.add(person1);
 
-        Person person2 = new Person("Prince", "456 Street");
+        Person person2 = new Person("Jeff", "123 Street");
         ProjectDB.add(person2);
 
         Passenger passenger1 = new Passenger(person1, 1);
         ProjectDB.add(passenger1);
 
-        FlightDescription flightDescription1 = new FlightDescription("France", "London", "01:00", "02:45", 10);
+        FlightDescription flightDescription1 = new FlightDescription("Karachi", "Lahore", "01:00", "02:45", 10);
         ProjectDB.add(flightDescription1);
 
-        ScheduledFlight scheduledFlight1 = new ScheduledFlight(flightDescription1, "25/12/2022");
+        ScheduledFlight scheduledFlight1 = new ScheduledFlight(flightDescription1, "25/06/2022");
         ProjectDB.add(scheduledFlight1);
 
 
@@ -359,7 +359,7 @@ public class Main {
                             index = input.nextInt();
                         } while (index < 1 || index > ProjectDB.scheduled_flight_list.size());
                         ProjectDB.scheduled_flight_list.remove(ProjectDB.scheduled_flight_list.get(index - 1));
-                        System.out.println("Scheduled Flight & Reservations cancelled Successfully!\n");
+                        System.out.println("Scheduled Flight & Reservations canceled Successfully!\n");
                         flights_menu();
                     }
                     break;
