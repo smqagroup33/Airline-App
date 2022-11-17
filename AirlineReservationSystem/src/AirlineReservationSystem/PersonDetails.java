@@ -13,6 +13,30 @@ public class PersonDetails
 	public String sAddress;
 	public long nAge; //
 	public String nPhoneNumber;
+	public String getsName() {
+		return sName;
+	}
+	public void setsName(String sName) {
+		this.sName = sName;
+	}
+	public String getsAddress() {
+		return sAddress;
+	}
+	public void setsAddress(String sAddress) {
+		this.sAddress = sAddress;
+	}
+	public long getnAge() {
+		return nAge;
+	}
+	public void setnAge(long nAge) {
+		this.nAge = nAge;
+	}
+	public String getnPhoneNumber() {
+		return nPhoneNumber;
+	}
+	public void setnPhoneNumber(String nPhoneNumber) {
+		this.nPhoneNumber = nPhoneNumber;
+	}
 }
 
  
