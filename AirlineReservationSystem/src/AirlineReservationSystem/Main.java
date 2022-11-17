@@ -8,10 +8,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Person person1 = new Person("Ali", "123 Street");
+    	/*PersonDetails Details = new PersonDetails();
+    	Details.sName = "Hariharan";
+    	Details.nPhoneNumber = "97766891784";
+    	Details.nAge = 2;
+    	
+        Person person1 = new Person(Details);
         ProjectDB.add(person1);
 
-        Person person2 = new Person("Jeff", "123 Street");
+        Person person2 = new Person(Details);
         ProjectDB.add(person2);
 
         Passenger passenger1 = new Passenger(person1, 1);
@@ -22,7 +27,7 @@ public class Main {
 
         ScheduledFlight scheduledFlight1 = new ScheduledFlight(flightDescription1, "25/06/2022");
         ProjectDB.add(scheduledFlight1);
-
+*/
 
         print_header();
         main_menu();
@@ -104,31 +109,37 @@ public class Main {
             switch (choice) {
                 case 1:
                     System.out.println("---->  NEW CUSTOMERS  <----");
-                    input = new Scanner(System.in); // refresh scanner to avoid errors
-                    System.out.print("Full Name: ");
-                    String name = input.nextLine();
-                    System.out.print("Address: ");
-                    String address = input.nextLine();
+                    PersonDetails new_customer = new PersonDetails();
+                    input = new Scanner(System.in); 
+                    System.out.print("Full Name : ");
+                    new_customer.sName = input.nextLine();
+                    System.out.print("Address : ");
+                    new_customer.sAddress = input.nextLine();
+                    System.out.print("Age : ");
+                    new_customer.nAge = Long.parseLong(input.nextLine());
+                    System.out.print("Phone Number : ");
+                    new_customer.nPhoneNumber = input.nextLine();
+                    
                 {
                     try {
-                        ProjectDB.add(new Person(name, address));
+                        ProjectDB.add(new Person(new_customer));
                     } catch (Exception ex) {
                         System.out.println("ERROR: File not Found!");
                     }
                 }
-                System.out.println("Added successfully : " + name + "\n");
+                System.out.println( new_customer.sName + " Record has been added successfully\n");
                 passengers_menu();
                 break;
 
                 case 2:
                     System.out.println("=> CUSTOMERS TABLE  <----");
-                    Person.show_all();
+                    Person.showtable();
                     passengers_menu();
                     break;
 
                 case 3:
                     System.out.println("---->  CUSTOMERS TABLE  <----");
-                    Person.show_all();
+                    Person.showtable();
                     if (ProjectDB.person_list.size() == 0) {
                         passengers_menu();
                     }
@@ -145,7 +156,7 @@ public class Main {
                 case 4:
                     System.out.println("---->  NEW RESERVATION   <----");
                     //Choose person
-                    Person.show_all();
+                    Person.showtable();
                     if (ProjectDB.person_list.size() == 0) {
                         passengers_menu();
                     }
@@ -182,7 +193,7 @@ public class Main {
                                 }
                                 int afterLen = ProjectDB.passenger_list.size();
                                 if (prevLen != afterLen) {
-                                    System.out.println("Reservation completed : " + p.name + " (" + scf.from + " -> " + scf.to + ")\n");
+                                    System.out.println("Reservation completed : " + p.PersnDet.sName + " (" + scf.from + " -> " + scf.to + ")\n");
                                 }
                             }
                             passengers_menu();

@@ -1,35 +1,47 @@
 package AirlineReservationSystem;
 
 public class Person {
-    public String name;
-    public String address;
 
-    public Person(String name, String address) {
-        this.name = name;
-        this.address = address;
+    public PersonDetails PersnDet = null;
+    
+    public Person(PersonDetails Details)
+    {
+    	this.PersnDet = Details;
     }
 
-    public static void show_all() {
-        int counter = 0;
-        for (int i = 0; i < 93; i++)
+    public static void showtable() {
+        int cntr = 0;
+        int i = 0;
+        int TotalCol = 55;
+        while(i<TotalCol)
+        {
             System.out.print("-");
+            i++;
+        }
         System.out.println();
-        System.out.printf("%5s | %-30s | %-50s |\n", "Index", "Full Name", "Address");
-        for (int i = 0; i < 93; i++)
-            if (i == 6 || i == 39 || i == 92)
+        System.out.printf("%5s | %-5s | %-5s | %-10s | %-10s |\n", "Index", "Full Name", "Address", "Age", "Ph Num");
+        i = 0;
+        while(i<TotalCol)
+        {
+            if (i == 6 || i == 18 || i == 28 || i == 41)
                 System.out.print("|");
             else
                 System.out.print("-");
+        i++;
+        }
         System.out.println();
-
         if (ProjectDB.person_list.isEmpty()) {
             System.out.println("\t==> No Customers added yet <==");
         }
-        for (Person p : ProjectDB.person_list) {
-            System.out.printf("%5d | %-30s | %-50s |\n", ++counter, p.name, p.address);
+        for (Person pObject : ProjectDB.person_list) {
+            System.out.printf("%5d | %-9s | %-7s | %-10s | %-10s |\n", ++cntr, pObject.PersnDet.sName, pObject.PersnDet.sAddress, pObject.PersnDet.nAge, pObject.PersnDet.nPhoneNumber);
         }
-        for (int i = 0; i < 93; i++)
+        i = 0;
+        while(i<TotalCol)
+        {
             System.out.print("-");
+            i++;
+        }
         System.out.println();
     }
 

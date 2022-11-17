@@ -12,9 +12,9 @@ public class ProjectDB {
 
     public static void add(Person person) {
         for (Person p : person_list) {
-            if (p.name.equals(person.name)) {
+            if (p.PersnDet.sName.equals(person.PersnDet.sName)) {
                 System.out.println("Can't save this data!");
-                System.out.println(person.name + " : Already saved!");
+                System.out.println(person.PersnDet.sName + " : Already saved!");
                 return;
             }
         }
@@ -23,9 +23,9 @@ public class ProjectDB {
 
     public static void add(Passenger passenger) {
         for (Passenger p : passenger_list) {
-            if (p.flight_number == passenger.flight_number && p.name.equals(passenger.name)) {
+            if (p.flight_number == passenger.flight_number && p.PersnDet.sName.equals(passenger.PersnDet.sName)) {
                 System.out.println("Can't save this data!");
-                System.out.println(passenger.name + " : Already reserved this flight!");
+                System.out.println(passenger.PersnDet.sName + " : Already reserved this flight!");
                 return;
             }
         }

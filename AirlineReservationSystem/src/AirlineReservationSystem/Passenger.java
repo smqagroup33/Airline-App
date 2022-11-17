@@ -6,7 +6,7 @@ public class Passenger extends Person {
     public int flight_number;
 
     public Passenger(Person person, int flight_number) {
-        super(person.name, person.address);
+       super(person.PersnDet);
         this.flight_number = flight_number;
     }
 
@@ -38,7 +38,7 @@ public class Passenger extends Person {
         }
 
         for (Passenger p : ProjectDB.passenger_list) {
-            System.out.printf("%5d | %5d | %-30s |\n", ++counter, p.flight_number, p.name);
+            System.out.printf("%5d | %5d | %-30s |\n", ++counter, p.flight_number, p.PersnDet.sName);
         }
         for (int i = 0; i < 48; i++)
             System.out.print("-");
@@ -70,7 +70,7 @@ public class Passenger extends Person {
         }
 
         for (Passenger p : output) {
-            System.out.printf("%5d | %-30s |\n", ++counter, p.name);
+            System.out.printf("%5d | %-30s |\n", ++counter, p.PersnDet.sName);
         }
         for (int i = 0; i < 40; i++)
             System.out.print("-");
