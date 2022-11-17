@@ -3,7 +3,7 @@ package AirlineReservationSystem;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Main {
+public class AirLineApp {
     static ConsoleColors cc = new ConsoleColors();
 
     public static void main(String[] args) {
