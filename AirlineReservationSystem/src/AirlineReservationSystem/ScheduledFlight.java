@@ -10,7 +10,7 @@ public class ScheduledFlight extends FlightDescription {
         this.flight_number = generate_flight_num();
     }
 
-    private static int generate_flight_num() {
+   private static int generate_flight_num() {
         int max = 0;
         for (ScheduledFlight scf : ProjectDB.scheduled_flight_list) {
             if (max < scf.flight_number)
