@@ -142,16 +142,20 @@ public class AirLineApp {
                     Person.showtable();
                     if (ProjectDB.person_list.size() == 0) {
                         passengers_menu();
+                        System.out.println("The list is empty");
                     }
                     else {
-                        do {
-                            System.out.println("Passenger details not Found!, Please enter valind input. ");
+                    	do {//geethika
+                        	System.out.println("Enter valid index value :");
                             index = input.nextInt();
-                            System.out.println(index);
+                          
+                            if(index>ProjectDB.person_list.size()|| index<1)
+                            	System.out.println("Choicle not valid !");
+                           
                         } while (index < 1 || index > ProjectDB.person_list.size());
                         ProjectDB.person_list.remove(ProjectDB.person_list.get(index - 1));
                         System.out.println("Removed Successfully!\n");                        
-                        passengers_menu();
+                     passengers_menu();
                     }
                     break;
                 case 4:
