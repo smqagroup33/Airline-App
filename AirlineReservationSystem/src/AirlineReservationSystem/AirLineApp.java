@@ -145,7 +145,7 @@ public class AirLineApp {
                         System.out.println("The list is empty");
                     }
                     else {
-                    	do {//geethika
+                    	do {
                         	System.out.println("Enter valid index value :");
                             index = input.nextInt();
                           
@@ -169,7 +169,10 @@ public class AirLineApp {
                         do {
                             System.out.print("Customer Index : ");
                             index = input.nextInt();
-                        } while (index < 1 || index > ProjectDB.person_list.size());
+                        } 
+						
+						while (index < 1 || index > ProjectDB.person_list.size());
+
                         Person p = ProjectDB.person_list.get(index - 1);
                         //Choose flight
                         ScheduledFlight scf;
@@ -180,11 +183,21 @@ public class AirLineApp {
                         }
                         else {
                             do {
-                                System.out.print("Flight Index : ");
-                                index = input.nextInt();
-                            } while (index < 1 || index > ProjectDB.scheduled_flight_list.size());
+								System.out.print("Flight Index : ");
+								index = input.nextInt();
+
+                                if (index > 0 && index <= ProjectDB.scheduled_flight_list.size())
+								{
+									break;
+								
+								}
+								else{
+									System.out.println("Please enter a valid index value.");
+							}
+                            } while (true);
+							System.out.println("Reservation Successfully Completed");
                             scf = ProjectDB.scheduled_flight_list.get(index - 1);
-                            if (scf.capacity == Passenger.getSCFlightPassengersCount(scf.flight_number) || ProjectDB.passenger_list.size() == 0) {
+                            if (scf.capacity == Passenger.getSCFlightPassengersCount(scf.flight_number) ) {
                                 System.out.println("This flight is at maximum capacity.");
                             }
                             else {
