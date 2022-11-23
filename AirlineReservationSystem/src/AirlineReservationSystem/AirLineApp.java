@@ -10,24 +10,24 @@ public class AirLineApp
     
     public static void main(String[] args) 
     {
-    	PrintHeadUI();
-        PrintMenuUI();
+    	printHeadUI();
+        printMenuUI();
     }
 
-    private static void Exit_Message()
+    private static void exit_Message()
     {
-    	PrintMessage("Thanks! Welcome Again");
+    	printMessage("Thanks! Welcome Again");
     }
 
-    private static void PrintHeadUI() 
+    private static void printHeadUI() 
     {
-    	PrintMessage("****************************************"+_cc_.RESET);
-    	PrintBold(_cc_.BLACK_BOLD + "       Ailine Application System       " +_cc_.RESET);
-    	PrintBold("****************************************"+_cc_.RESET);
-    	PrintBold("\n");
+    	printMessage("****************************************"+_cc_.RESET);
+    	printBold(_cc_.BLACK_BOLD + "       Ailine Application System       " +_cc_.RESET);
+    	printBold("****************************************"+_cc_.RESET);
+    	printBold("\n");
     }
 
-    private static Boolean ChoiceMenuUI(int choice)
+    private static boolean choiceMenuUI(int choice)
     {
     	if(choice > 0 && choice < 4)
     	{
@@ -35,14 +35,14 @@ public class AirLineApp
 	    	{
 	        case 1:
 	            System.out.println();
-	            PrintPassengerUI();
+	            printPassengerUI();
 	            break;
 	        case 2:
 	            System.out.println();
-	            PrintFlightsMenuUI();
+	            printFlightsMenuUI();
 	            break;
 	        case 3:
-	        	Exit_Message();
+	        	exit_Message();
 	    	}
     		return true;
     	}
@@ -50,7 +50,7 @@ public class AirLineApp
     	return false;
     }
 
-    private static int GetOptionFromUser(Scanner inOption)
+    private static int getOptionFromUser(Scanner inOption)
     {
         System.out.print("Enter Your Choice : ");
         try
@@ -66,42 +66,42 @@ public class AirLineApp
         }
     }
     
-    public static void PrintMenuUI() 
+    public static void printMenuUI() 
     {
-    	PrintBold(" --------  Main Menu  ---------");
-    	PrintBold("1. Passenger Menu");
-    	PrintBold("2. Flights Management Menu");
-    	PrintAlertBold("3. Exit " );
-    	PrintBold("------------------------------------\n");
+    	printBold(" --------  Main Menu  ---------");
+    	printBold("1. Passenger Menu");
+    	printBold("2. Flights Management Menu");
+    	printAlertBold("3. Exit " );
+    	printBold("------------------------------------\n");
     	
-        do{ } while (!ChoiceMenuUI(GetOptionFromUser(input)));
+        do{ } while (!choiceMenuUI(getOptionFromUser(input)));
     }
 
-    private static void PrintAlertBold(String Menu)
+    private static void printAlertBold(String menu)
     {
-    	PrintMessage(  _cc_.RED_BOLD  + Menu + _cc_.RESET);
+    	printMessage(  _cc_.RED_BOLD  + menu + _cc_.RESET);
     }
     
-    private static void PrintMessage(String Message)
+    private static void printMessage(String Message)
     {
     	System.out.println(Message);
     }
     
-    private static void PrintBold(String Menu)
+    private static void printBold(String menu)
     {
-    	PrintMessage( _cc_.BLACK_BOLD + Menu + _cc_.RESET);
+    	printMessage( _cc_.BLACK_BOLD + menu + _cc_.RESET);
     }
 
     
-    public static Boolean ChoicePassengerUI(int Option) 
+    public static boolean choicePassengerUI(int option) 
     {
-    	if(Option > 0 && Option < 8)
+    	if(option > 0 && option < 8)
     	{
         	int index = 0;
-	    	   switch (Option) 
+	    	   switch (option) 
 	    	   {
 		           case 1:
-					PrintMessage("----- NEW CUSTOMERS -----");
+					printMessage("----- NEW CUSTOMERS -----");
 					PersonDetails cusTomerObject = new PersonDetails();
 					
 					System.out.print("Full Name : ");
@@ -118,44 +118,44 @@ public class AirLineApp
 	               } 
 	               catch (Exception ex) 
 	               {
-	            	   PrintMessage("ERROR: File not Found!");
+	            	   printMessage("ERROR: File not Found!");
 	               }
 	           
-	               PrintMessage( cusTomerObject.sName + " Record is inserted successfully\n");
-		           PrintPassengerUI();
+	               printMessage( cusTomerObject.sName + " Record is inserted successfully\n");
+		           printPassengerUI();
 		           break;
 		
 		           case 2:
-		        	   PrintBold("---- CUSTOMERS TABLE  ----");
-		               Person.ShowPersonTable();
-		               PrintPassengerUI();
+		        	   printBold("---- CUSTOMERS TABLE  ----");
+		               Person.showPersonTable();
+		               printPassengerUI();
 		               break;
 		
 		           case 3:
-		        	   PrintBold("-----  CUSTOMERS TABLE  -----");
-		               Person.ShowPersonTable(); 
+		        	   printBold("-----  CUSTOMERS TABLE  -----");
+		               Person.showPersonTable(); 
 		               if (ProjectDB.personlst.size() == 0) {
-		                   PrintPassengerUI();
+		                   printPassengerUI();
 		                   System.out.println("Warning : No Passanger Avaialable.");
 		               }
 		               else 
 		               {
 		               	do {
-		               		PrintMessage("Enter valid index value :");
+		               		printMessage("Enter valid index value :");
 		                       index = input.nextInt();		                     
 		                       if(index > ProjectDB.personlst.size()|| index < 1)
-		                    	   PrintMessage("Choice not valid !");		                      
+		                    	   printMessage("Choice not valid !");		                      
 		                   } while (index < 1 || index > ProjectDB.personlst.size());
 		                   ProjectDB.personlst.remove(ProjectDB.personlst.get(index - 1));
-		                   PrintMessage("Removed Successfully!\n");                        
-		                PrintPassengerUI();
+		                   printMessage("Removed Successfully!\n");                        
+		                printPassengerUI();
 		               }
 		               break;
 		           case 4:
-		        	   PrintBold("----  NEW RESERVATION   ----");
-		               Person.ShowPersonTable();
+		        	   printBold("----  NEW RESERVATION   ----");
+		               Person.showPersonTable();
 		               if (ProjectDB.personlst.size() == 0) {
-		                   PrintPassengerUI();
+		                   printPassengerUI();
 		               }
 		               else {
 		                   do {
@@ -168,7 +168,7 @@ public class AirLineApp
 		                   FlightScheduler scfObject;		
 		                   FlightScheduler.showFlightSchedulerTable();
 		                   if (ProjectDB.flightSchedulerlst.size() == 0) {
-		                       PrintPassengerUI();
+		                       printPassengerUI();
 		                   }
 		                   else {
 		                       do {
@@ -205,10 +205,10 @@ public class AirLineApp
 		                           }
 		                           int afterLen = ProjectDB.passengerlst.size();
 		                           if (prevLen != afterLen) {
-		                               System.out.println("Reservation completed : " + p.PersnDet.sName + " (" + scfObject.sfrom + " => " + scfObject.sto + ")\n");
+		                               System.out.println("Reservation completed : " + p.persnDet.sName + " (" + scfObject.sfrom + " => " + scfObject.sto + ")\n");
 		                           }
 		                       }
-		                       PrintPassengerUI();
+		                       printPassengerUI();
 		                   }
 		               }
 		               //PrintPassengerUI();
@@ -216,13 +216,13 @@ public class AirLineApp
 		           case 5:
 		               System.out.println("------ RESERVATIONS TABLE  -----");
 		               PassengerDetails.show_PassengerDetails();
-		               PrintPassengerUI();
+		               printPassengerUI();
 		               break;
 		           case 6:
 		               System.out.println("------ RESERVATIONS TABLE  ------");
 		               PassengerDetails.show_PassengerDetails();
 		               if (ProjectDB.passengerlst.size() == 0) {
-		                   PrintPassengerUI();
+		                   printPassengerUI();
 		               }
 		               else {
 		                   do {
@@ -231,16 +231,16 @@ public class AirLineApp
 		                   } while (index < 1 || index > ProjectDB.passengerlst.size());
 		                   ProjectDB.passengerlst.remove(ProjectDB.passengerlst.get(index - 1));
 		                   System.out.println("Reservation Cancelled Successfully!\n");
-		                   PrintPassengerUI();
+		                   printPassengerUI();
 		               }
 		               break;
 		
 		           case 7:
 		               System.out.println();
-		               PrintMenuUI();
+		               printMenuUI();
 		               break;
 		           case 8:
-		               PrintPassengerUI();
+		               printPassengerUI();
 		               break;
 		           default:
 		               System.out.println("ERROR: Choice not valid");
@@ -251,21 +251,21 @@ public class AirLineApp
     	return false;
     }
     
-    public static void PrintPassengerUI() {
-    	PrintBold(" --------  Passengers Menu  ---------");
-    	PrintBold("1. Add New Customer");
-    	PrintBold("2. View Customers");
-    	PrintBold("3. Remove A Customer");
-    	PrintBold("4. Add New Reservation");
-    	PrintBold("5. View Reservations");
-    	PrintBold("6. Cancel A Reservation");
-    	PrintAlertBold("7. Return Main Menu");
-    	PrintBold("----------------------------------");
-        do{ } while (!ChoicePassengerUI(GetOptionFromUser(input)));
+    public static void printPassengerUI() {
+    	printBold(" --------  Passengers Menu  ---------");
+    	printBold("1. Add New Customer");
+    	printBold("2. View Customers");
+    	printBold("3. Remove A Customer");
+    	printBold("4. Add New Reservation");
+    	printBold("5. View Reservations");
+    	printBold("6. Cancel A Reservation");
+    	printAlertBold("7. Return Main Menu");
+    	printBold("----------------------------------");
+        do{ } while (!choicePassengerUI(getOptionFromUser(input)));
           
     }
 
-    private static Boolean FlightMenuChoice(int choice)
+    public static boolean flightMenuChoice(int choice)
     {
     	if(choice > 0 && choice < 10)
     	{// refresh scanner to avoid errors;
@@ -293,7 +293,7 @@ public class AirLineApp
 	              int prevSize = ProjectDB.flightdetlst.size();
 	              try 
 	              {
-	                  ProjectDB.insert(new FlightDetails(from, to, depTime, arrTime, cap));
+	                  ProjectDB.insert(new flightDetails(from, to, depTime, arrTime, cap));
 	              } 
 	              catch (Exception ex) 
 	              {
@@ -304,19 +304,19 @@ public class AirLineApp
 		          {
 		              System.out.println("Flight Description added successfully : " + from + " -> " + to + "\n");
 		          }
-		          PrintFlightsMenuUI();
+		          printFlightsMenuUI();
 		          break;
 	
 	          case 2:
 	              System.out.println("--- FLIGHT DESCRIPTION TABLE  ---");
-	              FlightDetails.show_FlightDetails();
-	              PrintFlightsMenuUI();
+	              flightDetails.show_FlightDetails();
+	              printFlightsMenuUI();
 	              break;
 	          case 3:
 	              System.out.println("--- FLIGHT DESCRIPTION TABLE ---");
-	              FlightDetails.show_FlightDetails();
+	              flightDetails.show_FlightDetails();
 	              if (ProjectDB.flightdetlst.size() == 0) {
-	                  PrintFlightsMenuUI();
+	                  printFlightsMenuUI();
 	              }
 	              else {
 	                  do {
@@ -326,14 +326,14 @@ public class AirLineApp
 	                  ProjectDB.flightdetlst.remove(ProjectDB.flightdetlst.get(index - 1));
 	
 	                  System.out.println("Flight description removed Successfully!\n");
-	                  PrintFlightsMenuUI();
+	                  printFlightsMenuUI();
 	              }
 	              break;
 	          case 4:
 	              System.out.println("--  FLIGHT DESCRIPTION TABLE  ---");
-	              FlightDetails.show_FlightDetails();
+	              flightDetails.show_FlightDetails();
 	              if (ProjectDB.flightdetlst.size() == 0) {
-	                  PrintFlightsMenuUI();
+	                  printFlightsMenuUI();
 	              }
 	              else {
 	                  do 
@@ -342,7 +342,7 @@ public class AirLineApp
 	                      index = input.nextInt();
 	                  } while (index < 1 || index > ProjectDB.flightdetlst.size());
 	                  
-	                  FlightDetails fd = ProjectDB.flightdetlst.get(index - 1);
+	                  flightDetails fd = ProjectDB.flightdetlst.get(index - 1);
 	                
 	                  String date;
 	
@@ -361,20 +361,20 @@ public class AirLineApp
 	                  if (prevLen != afterLen) {
 	                      System.out.println("Scheduled " + date + " for flight : " + fd.sfrom + " -> " + fd.sto + "\n");
 	                  }
-	                  PrintFlightsMenuUI();
+	                  printFlightsMenuUI();
 	              }
 	              break;
 	          case 5:
 	              System.out.println("-- SCHEDULED FLIGHTS TABLE  --");
 	              FlightScheduler.showFlightSchedulerTable();
-	              PrintFlightsMenuUI();
+	              printFlightsMenuUI();
 	              break;
 	
 	          case 6:
 	              System.out.println("-- SCHEDULED FLIGHT TABLE ---");
 	              FlightScheduler.showFlightSchedulerTable();
 	              if (ProjectDB.flightSchedulerlst.size() == 0) {
-	                  PrintFlightsMenuUI();
+	                  printFlightsMenuUI();
 	              }
 	              else {
 	                  do {
@@ -383,7 +383,7 @@ public class AirLineApp
 	                  } while (index < 1 || index > ProjectDB.flightSchedulerlst.size());
 	                  ProjectDB.flightSchedulerlst.remove(ProjectDB.flightSchedulerlst.get(index - 1));
 	                  System.out.println("Scheduled Flight & Reservations canceled successfullyy!\n");
-	                  PrintFlightsMenuUI();
+	                  printFlightsMenuUI();
 	              }
 	              break;
 	
@@ -395,15 +395,15 @@ public class AirLineApp
 	                  index = input.nextInt();
 	              } while (index < 1 || index > ProjectDB.flightSchedulerlst.size());
 	              int flight_num = ProjectDB.flightSchedulerlst.get(index - 1).nflight_number;
-	              PassengerDetails.ShowFlightNumber(flight_num);
-	              PrintFlightsMenuUI();
+	              PassengerDetails.showFlightNumber(flight_num);
+	              printFlightsMenuUI();
 	              break;
 	          case 8:
 	              System.out.println();
-	              PrintMenuUI();
+	              printMenuUI();
 	              break;
 	          case 9:
-	              PrintFlightsMenuUI();
+	              printFlightsMenuUI();
 	              break;
 	          default:
 	              System.out.println("ERROR: Choice not valid");
@@ -414,19 +414,19 @@ public class AirLineApp
 
     }
     
-    public static void PrintFlightsMenuUI() 
+    public static void printFlightsMenuUI() 
     {
-    	PrintBold("----  Flight Management Menu  -----");
-    	PrintBold("1. Add New Flight Description");
-    	PrintBold("2. View All Flight Description");
-    	PrintBold("3. Remove Flight Description");
-    	PrintBold("4. Schedule New Flight");
-    	PrintBold("5. View All Scheduled Flights");
-    	PrintBold("6. Cancel Scheduled Flight");
-    	PrintBold("7. View Scheduled Flight Passengers");
-    	PrintAlertBold("8. Main Menu");
-    	PrintBold("----------------------------------");
+    	printBold("----  Flight Management Menu  -----");
+    	printBold("1. Add New Flight Description");
+    	printBold("2. View All Flight Description");
+    	printBold("3. Remove Flight Description");
+    	printBold("4. Schedule New Flight");
+    	printBold("5. View All Scheduled Flights");
+    	printBold("6. Cancel Scheduled Flight");
+    	printBold("7. View Scheduled Flight Passengers");
+    	printAlertBold("8. Main Menu");
+    	printBold("----------------------------------");
         
-        do{ } while (!FlightMenuChoice(GetOptionFromUser(input)));
+        do{ } while (!flightMenuChoice(getOptionFromUser(input)));
     }
 }

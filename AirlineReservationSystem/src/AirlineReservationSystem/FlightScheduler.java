@@ -1,18 +1,18 @@
 package AirlineReservationSystem;
 
-public class FlightScheduler extends FlightDetails 
+public class FlightScheduler extends flightDetails 
 {
     public String sdate;
     public int nflight_number;
 
-    public FlightScheduler(FlightDetails Flightdesc, String s_date) 
+    public FlightScheduler(flightDetails Flightdesc, String s_date) 
     {
         super(Flightdesc.sfrom, Flightdesc.sto, Flightdesc.sdeparture_time, Flightdesc.sarrival_time, Flightdesc.ncapacity);
         this.sdate = s_date;
-        this.nflight_number = GenerateFlightNumber();
+        this.nflight_number = generateFlightNumber();
     }
 
-   private static int GenerateFlightNumber() 
+   private static int generateFlightNumber() 
    {
         int nmax = 0;
         for (FlightScheduler flightScheduler : ProjectDB.flightSchedulerlst) 

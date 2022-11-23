@@ -8,7 +8,7 @@ public class PassengerDetails extends Person
 	public int nflight_number;
 
 	public PassengerDetails(Person perObj, int nflight_number) {
-		super(perObj.PersnDet);
+		super(perObj.persnDet);
 		this.nflight_number = nflight_number;
 	}
 
@@ -55,7 +55,7 @@ public class PassengerDetails extends Person
 
 		for (PassengerDetails pdObj : ProjectDB.passengerlst) 
 		{
-			System.out.printf("%5d | %5d | %-30s |\n", ++ncounter, pdObj.nflight_number, pdObj.PersnDet.sName);
+			System.out.printf("%5d | %5d | %-30s |\n", ++ncounter, pdObj.nflight_number, pdObj.persnDet.sName);
 		}
 		for (int it = 0; it < 48; it++)
 		{
@@ -64,7 +64,7 @@ public class PassengerDetails extends Person
 		System.out.println();
 	}
 
-	public static List ShowFlightNumber(int nflight_num) 
+	public static List showFlightNumber(int nflight_num) 
 	{
 		ArrayList<PassengerDetails> PassengerList = new ArrayList<>();
 		for (PassengerDetails pdObj : ProjectDB.passengerlst) 
@@ -98,7 +98,7 @@ public class PassengerDetails extends Person
 
 		for (PassengerDetails pdObject : PassengerList) 
 		{
-			System.out.printf("%5d | %-30s |\n", ++ncounter, pdObject.PersnDet.sName);
+			System.out.printf("%5d | %-30s |\n", ++ncounter, pdObject.persnDet.sName);
 		}
 
 		return PassengerList;

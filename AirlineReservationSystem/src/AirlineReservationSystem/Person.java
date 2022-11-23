@@ -2,14 +2,14 @@ package AirlineReservationSystem;
 
 public class Person {
 
-	public PersonDetails PersnDet = null;
+	public PersonDetails persnDet = null;
 
 	public Person(PersonDetails Details) 
 	{
-		this.PersnDet = Details;
+		this.persnDet = Details;
 	}
 
-	public static void ShowPersonTable() 
+	public static void showPersonTable() 
 	{
 		int ncntr = 0;
 		int nTotalCol = 100;
@@ -42,8 +42,8 @@ public class Person {
 		}
 		for (Person pObject : ProjectDB.personlst) 
 		{
-			System.out.printf("%5d | %-20s | %-30s | %-10s | %-10s |\n", ++ncntr, pObject.PersnDet.sName,
-					pObject.PersnDet.sAddress, pObject.PersnDet.nAge, pObject.PersnDet.nPhoneNumber);
+			System.out.printf("%5d | %-20s | %-30s | %-10s | %-10s |\n", ++ncntr, pObject.persnDet.sName,
+					pObject.persnDet.sAddress, pObject.persnDet.nAge, pObject.persnDet.nPhoneNumber);
 		}
 		itr = 0;
 		while (itr < nTotalCol) 
