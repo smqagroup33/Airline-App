@@ -7,34 +7,34 @@ import java.util.Scanner;
 
 import org.junit.jupiter.api.Test;
 
-import AirlineReservationSystem.FlightDescription;
-import AirlineReservationSystem.Passenger;
+import AirlineReservationSystem.FlightDetails;
+import AirlineReservationSystem.PassengerDetails;
 import AirlineReservationSystem.Person;
 import AirlineReservationSystem.PersonDetails;
 import AirlineReservationSystem.ProjectDB;
-import AirlineReservationSystem.ScheduledFlight;
+import AirlineReservationSystem.FlightScheduler;
 
 class AirLineTest {
 
 	@Test
 	void validateAddPersonDetails() {
-		int count = ProjectDB.person_list.size();
+		int count = ProjectDB.personlst.size();
 		PersonDetails new_customer = new PersonDetails();
 		new_customer.setsName("John");
 		new_customer.setnAge(25);
 		new_customer.setsAddress("LE16RT");
 		new_customer.setnPhoneNumber("9876549876");
 
-		ProjectDB.add(new Person(new_customer));
-		assertEquals(count + 1, ProjectDB.person_list.size());
-		count = ProjectDB.person_list.size();
-		ProjectDB.add(new Person(new_customer));
-		assertEquals(count, ProjectDB.person_list.size());
+		ProjectDB.insert(new Person(new_customer));
+		assertEquals(count + 1, ProjectDB.personlst.size());
+		count = ProjectDB.personlst.size();
+		ProjectDB.insert(new Person(new_customer));
+		assertEquals(count, ProjectDB.personlst.size());
 	}
 
 	@Test
 	void validateAddPassenger() {
-		int count = ProjectDB.passenger_list.size();
+		int count = ProjectDB.passengerlst.size();
 		PersonDetails new_customer = new PersonDetails();
 		new_customer.setsName("Johnny");
 		new_customer.setnAge(24);
@@ -42,36 +42,36 @@ class AirLineTest {
 		new_customer.setnPhoneNumber("9876549876");
 
 		Person person = new Person(new_customer);
-		Passenger pass = new Passenger(person, 12345);
-		ProjectDB.add(pass);
-		assertEquals(count + 1, ProjectDB.passenger_list.size());
-		count = ProjectDB.passenger_list.size();
-		ProjectDB.add(new Passenger(person, 12345));
-		assertEquals(count, ProjectDB.passenger_list.size());
+		PassengerDetails pass = new PassengerDetails(person, 12345);
+		ProjectDB.insert(pass);
+		assertEquals(count + 1, ProjectDB.passengerlst.size());
+		count = ProjectDB.passengerlst.size();
+		ProjectDB.insert(new PassengerDetails(person, 12345));
+		assertEquals(count, ProjectDB.passengerlst.size());
 	}
 
 	@Test
 	void validateAddFlightDescription() {
-		int count = ProjectDB.flight_desc_list.size();
-		FlightDescription flights = new FlightDescription("London", "Glasgow", "10.30", "12.30", 123);
-		ProjectDB.add(flights);
-		assertEquals(count + 1, ProjectDB.flight_desc_list.size());
-		count = ProjectDB.flight_desc_list.size();
-		ProjectDB.add(new FlightDescription("London", "Glasgow", "10.30", "12.30", 123));
-		assertEquals(count, ProjectDB.flight_desc_list.size());
+		int count = ProjectDB.flightdetlst.size();
+		FlightDetails flights = new FlightDetails("London", "Glasgow", "10.30", "12.30", 123);
+		ProjectDB.insert(flights);
+		assertEquals(count + 1, ProjectDB.flightdetlst.size());
+		count = ProjectDB.flightdetlst.size();
+		ProjectDB.insert(new FlightDetails("London", "Glasgow", "10.30", "12.30", 123));
+		assertEquals(count, ProjectDB.flightdetlst.size());
 
 	}
 
 	@Test
 	void validateScheduleFlight() {
-		int count = ProjectDB.scheduled_flight_list.size();
-		FlightDescription flights = new FlightDescription("London", "Glasgow", "10.30", "12.30", 123);
-		ScheduledFlight schFlight = new ScheduledFlight(flights, "12332");
-		ProjectDB.add(schFlight);
-		assertEquals(count + 1, ProjectDB.scheduled_flight_list.size());
-		count = ProjectDB.scheduled_flight_list.size();
-		ProjectDB.add(new ScheduledFlight(flights, "12332"));
-		assertEquals(count, ProjectDB.scheduled_flight_list.size());
+		int count = ProjectDB.flightSchedulerlst.size();
+		FlightDetails flights = new FlightDetails("London", "Glasgow", "10.30", "12.30", 123);
+		FlightScheduler schFlight = new FlightScheduler(flights, "12332");
+		ProjectDB.insert(schFlight);
+		assertEquals(count + 1, ProjectDB.flightSchedulerlst.size());
+		count = ProjectDB.flightSchedulerlst.size();
+		ProjectDB.insert(new FlightScheduler(flights, "12332"));
+		assertEquals(count, ProjectDB.flightSchedulerlst.size());
 	}
 
 	@Test
@@ -84,9 +84,9 @@ class AirLineTest {
 		new_customer.setnPhoneNumber("98765498761");
 
 		Person person = new Person(new_customer);
-		Passenger pass = new Passenger(person, 87655);
-		ProjectDB.add(pass);
-		assertEquals(1, Passenger.getSCFlightPassengersCount(87655));
+		PassengerDetails pass = new PassengerDetails(person, 87655);
+		ProjectDB.insert(pass);
+		assertEquals(1, PassengerDetails.getSCFlightPassengersCount(87655));
 	}
 	
 	@Test
@@ -98,14 +98,14 @@ class AirLineTest {
 		new_customer.setnPhoneNumber("9876549876");
 
 		Person person = new Person(new_customer);
-		Passenger pass = new Passenger(person, 379137);
-		ProjectDB.add(pass); 
+		PassengerDetails pass = new PassengerDetails(person, 379137);
+		ProjectDB.insert(pass); 
 		
-		ArrayList<Passenger> expectedOutput =new ArrayList<Passenger>();
+		ArrayList<PassengerDetails> expectedOutput =new ArrayList<PassengerDetails>();
 		expectedOutput.add(pass);
 		
-		assertEquals(expectedOutput,Passenger.show_only_flight_no(379137));
+		assertEquals(expectedOutput,PassengerDetails.ShowFlightNumber(379137));
 		
-		assertEquals(new ArrayList<Passenger>(),Passenger.show_only_flight_no(34543098));
+		assertEquals(new ArrayList<PassengerDetails>(),PassengerDetails.ShowFlightNumber(34543098));
 	}
 }
