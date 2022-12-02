@@ -12,11 +12,13 @@ import AirlineReservationSystem.PassengerDetails;
 import AirlineReservationSystem.Person;
 import AirlineReservationSystem.PersonDetails;
 import AirlineReservationSystem.ProjectDB;
+import AirlineReservationSystem.AirLineApp;
 import AirlineReservationSystem.FlightScheduler;
 
 class AirLineTest {
 
 	@Test
+	static
 	void validateAddPersonDetails() {
 		int count = ProjectDB.personlst.size();
 		PersonDetails new_customer = new PersonDetails();
@@ -88,24 +90,59 @@ class AirLineTest {
 		ProjectDB.insert(pass);
 		assertEquals(1, PassengerDetails.getSCFlightPassengersCount(87655));
 	}
-	
+ 
 	@Test
 	void validateShowOnlyFlightNo() {
 		PersonDetails new_customer = new PersonDetails();
-		new_customer.setsName("Johnny"); 
+		new_customer.setsName("Johnny");
 		new_customer.setnAge(24);
 		new_customer.setsAddress("LE16RT");
 		new_customer.setnPhoneNumber("9876549876");
 
 		Person person = new Person(new_customer);
 		PassengerDetails pass = new PassengerDetails(person, 379137);
-		ProjectDB.insert(pass); 
-		
-		ArrayList<PassengerDetails> expectedOutput =new ArrayList<PassengerDetails>();
+		ProjectDB.insert(pass);
+
+		ArrayList<PassengerDetails> expectedOutput = new ArrayList<PassengerDetails>();
 		expectedOutput.add(pass);
-		
-		assertEquals(expectedOutput,PassengerDetails.showFlightNumber(379137));
-		
-		assertEquals(new ArrayList<PassengerDetails>(),PassengerDetails.showFlightNumber(34543098));
+
+		assertEquals(expectedOutput, PassengerDetails.showFlightNumber(379137));
+
+		assertEquals(new ArrayList<PassengerDetails>(), PassengerDetails.showFlightNumber(34543098));
 	}
-}
+
+	@Test
+	void validateMain_menu() {
+
+		AirLineApp.input = new Scanner("5\n3\n");
+		AirLineApp.printMenuUI();
+	}
+ 
+	@Test
+	void validateMain_menu1() {
+
+		AirLineApp.input = new Scanner("1\n7\n3\n");
+		AirLineApp.printMenuUI();
+	}
+
+	@Test
+	void validateMain_menu2() {
+
+		AirLineApp.input = new Scanner("2\n8\n3\n");
+		AirLineApp.printMenuUI();
+	}
+
+	@Test
+	void validateMain_menu3() {
+
+		AirLineApp.input = new Scanner("4\n3\n");
+		AirLineApp.printMenuUI();
+	}
+	
+	@Test
+	void validateMain_menu_case1() {
+		AirLineApp.input = new Scanner("1\n1\nShoaib\nLE16RT\n28\n7654567\n7\n3\n");
+		AirLineApp.printMenuUI();
+	}
+
+	}

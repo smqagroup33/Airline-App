@@ -22,7 +22,7 @@ public class ProjectDB {
 		}
 		personlst.add(person);
 	}
-
+ 
 	public static void insert(PassengerDetails passenger) 
 	{
 		for (PassengerDetails pdObj : passengerlst) 

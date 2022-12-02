@@ -12,7 +12,7 @@ public class AirLineApp
     {
     	printHeadUI();
         printMenuUI();
-    }
+    } 
 
     private static void exit_Message()
     {
@@ -64,7 +64,7 @@ public class AirLineApp
         	System.out.println();
             return -1;
         }
-    }
+    } 
     
     public static void printMenuUI() 
     {
@@ -99,7 +99,7 @@ public class AirLineApp
     	{
         	int index = 0;
 	    	   switch (option) 
-	    	   {
+	    	   { 
 		           case 1:
 					printMessage("----- NEW CUSTOMERS -----");
 					PersonDetails cusTomerObject = new PersonDetails();
@@ -139,7 +139,7 @@ public class AirLineApp
 		                   System.out.println("Warning : No Passanger Avaialable.");
 		               }
 		               else 
-		               {
+		               { 
 		               	do {
 		               		printMessage("Enter valid index value :");
 		                       index = input.nextInt();		                     
