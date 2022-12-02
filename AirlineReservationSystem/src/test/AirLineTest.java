@@ -144,5 +144,4 @@ class AirLineTest {
 		AirLineApp.input = new Scanner("1\n1\nShoaib\nLE16RT\n28\n7654567\n7\n3\n");
 		AirLineApp.printMenuUI();
 	}
-
-	}
+}

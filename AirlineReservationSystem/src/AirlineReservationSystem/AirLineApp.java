@@ -26,7 +26,6 @@ public class AirLineApp
     	printBold("****************************************"+_cc_.RESET);
     	printBold("\n");
     }
-
     private static boolean choiceMenuUI(int choice)
     {
     	if(choice > 0 && choice < 4)

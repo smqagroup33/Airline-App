@@ -25,7 +25,6 @@ public class PassengerDetails extends Person
 		return ncounter;
 
 	}
-
 	public static void show_PassengerDetails() 
 	{
 		int ncounter = 0;
