@@ -63,18 +63,26 @@ public class PassengerDetails extends Person
 		System.out.println();
 	}
 
+	public static ArrayList<PassengerDetails> insertPassengerList(ArrayList<PassengerDetails> passengerlst , int nflight_num)
+	{
+		if(passengerlst != null)
+		{
+			ArrayList<PassengerDetails> PassengerList = new ArrayList<>();
+			for (PassengerDetails pdObj : passengerlst) 
+			{
+				if (pdObj.nflight_number == nflight_num)
+				{
+					PassengerList.add(pdObj);
+				}
+			}
+			return PassengerList;
+		}
+		return null;
+	}
+		
 	public static List showFlightNumber(int nflight_num) 
 	{
-		ArrayList<PassengerDetails> PassengerList = new ArrayList<>();
-		for (PassengerDetails pdObj : ProjectDB.passengerlst) 
-		{
-			if (pdObj.nflight_number == nflight_num)
-			{
-				PassengerList.add(pdObj);
-			}
-		}
-
-		int ncounter = 0;
+		ArrayList<PassengerDetails> PassengerList = insertPassengerList(ProjectDB.passengerlst,nflight_num);
 
 		System.out.printf("%5s | %-30s |\n", "Index", "Full Name");
 		for (int it = 0; it < 40; it++)
@@ -95,12 +103,22 @@ public class PassengerDetails extends Person
 			System.out.println("\t Warning : Reservations Not Available..");
 		}
 
-		for (PassengerDetails pdObject : PassengerList) 
-		{
-			System.out.printf("%5d | %-30s |\n", ++ncounter, pdObject.persnDet.sName);
-		}
+		printPassengerDetails(PassengerList);
 
 		return PassengerList;
 	}
 
+	public static Boolean printPassengerDetails(ArrayList<PassengerDetails> PassengerList )
+	{
+		int ncounter = 0;
+		if(PassengerList != null)
+		{
+			for (PassengerDetails pdObject : PassengerList) 
+			{
+				System.out.printf("%5d | %-30s |\n", ++ncounter, pdObject.persnDet.sName);
+			}
+			return true;
+		}
+		return false;
+	}
 }

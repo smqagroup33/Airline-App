@@ -15,26 +15,47 @@ public class PersonDetails
 	public String getsName() {
 		return sName;
 	}
-	public void setsName(String sName) {
-		this.sName = sName;
+	public Boolean setsName(String sName) 
+	{
+		if(sName.length() <= 10)
+		{
+			this.sName = sName;
+			return true;
+		}
+		return false;
 	}
 	public String getsAddress() {
 		return sAddress;
 	}
-	public void setsAddress(String sAddress) {
-		this.sAddress = sAddress;
+	public Boolean setsAddress(String sAddress) {
+		if(sAddress.length() <= 6)
+		{
+			this.sAddress = sAddress;
+			return true;
+		}
+		return false;
 	}
 	public long getnAge() {
 		return nAge;
 	}
-	public void setnAge(long nAge) {
-		this.nAge = nAge;
+	public Boolean setnAge(long nAge) 
+	{
+		if(nAge > 0)
+		{
+			this.nAge = nAge;
+			return true;
+		}
+		return false;
 	}
 	public String getnPhoneNumber() {
 		return nPhoneNumber;
 	}
-	public void setnPhoneNumber(String nPhoneNumber) {
-		this.nPhoneNumber = nPhoneNumber;
+	public void setnPhoneNumber(String nPhoneNumber) 
+	{
+		if(nPhoneNumber.length() <= 10)
+		{
+			this.nPhoneNumber = nPhoneNumber;
+		}
 	}
 }
 
