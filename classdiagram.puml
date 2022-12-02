@@ -1,0 +1,89 @@
+@startuml "Airline Reservation Classes"
+
+Class AirlineApplication {
+    cc : ConsoleStyles
+    input : Scanner
+    void main()
+    void exit()
+    void printheadUI()
+    boolean choicemenu()
+    int getOptionfromUser()
+    void printMenuUI()
+    void printAlertBold()
+    void printmessage()
+    void printbold()
+    boolean choicePassengerUI()
+    void printPassengerUI()
+    boolean flightMenuChoice()
+    void printMenuFLightsUI()
+}
+class ProjectDB{
+    SceduledFlights : List<<Scheduled_Flights>>
+    Persons : List<<Persons>>
+    Reservation : List<<Passengers>>
+    Flights : List<<flights>>
+    void Insert()
+    
+}
+class ConsoleStyles{
+    reset : string
+    black_bold : string
+    red_bold : string
+}
+class PersonDetails{
+    name : string
+    age  : int
+    address : string
+    mobileNumber : float
+    void setName()
+    string getAddress()
+    void setAddress()
+    long Age()
+    void setAge()
+    string getPhoneNumber()
+    void setPhoneNumber()
+}
+class FlightDetails{
+    origin : String
+    destination : String
+    date : String
+    time : String
+    string getFrom()
+    void setFrom()
+    string getTwo()
+    void settwo()
+    string getDepartureTime()
+    void setDepartureTime()
+    string getArrivalTIme()
+    void setArrivalTime()
+    int getCapacity()
+    void getCapacity()
+    void showFlightDetails()
+}
+class Person{
+    personDet : PassengerDetails
+    void showPersonTable()
+}
+class PassengerDetails{
+    reservationID : string
+    fLightNumber : Int
+    int getFlightPassengerCount()
+    void showPassengerDetails()
+    list showFlightNumber()
+}
+Class FLightSchedule{
+    flightNumber : Int
+    date : String
+    int generateFlightNumber()
+    void showFlightSchedulerTable()
+}
+AirlineApplication  -- ProjectDB
+AirlineApplication  --- Person
+AirlineApplication  --- FlightDetails 
+AirlineApplication  -- ConsoleStyles
+AirlineApplication  -- PersonDetails
+Person             <|-- PassengerDetails 
+FlightDetails      <|-- FLightSchedule 
+
+
+@enduml
