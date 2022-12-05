@@ -12,7 +12,7 @@ public class FlightScheduler extends flightDetails
         this.nflight_number = generateFlightNumber();
     }
 
-   private static int generateFlightNumber() 
+   public static int generateFlightNumber() 
    {
         int nmax = 0;
         for (FlightScheduler flightScheduler : ProjectDB.flightSchedulerlst) 

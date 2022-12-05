@@ -10,7 +10,7 @@ public class AirLineApp {
     public static PassengerDetails g_perobj = null;
     public static flightDetails g_fd = null;
     public static FlightScheduler g_sch = null;
-    
+     
     public static void FilinDetails()
     {
     	PersonDetails g_cusTobj = new PersonDetails();
