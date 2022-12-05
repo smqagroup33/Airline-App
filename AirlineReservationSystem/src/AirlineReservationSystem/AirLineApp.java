@@ -6,11 +6,35 @@ import java.util.InputMismatchException;
 public class AirLineApp { 
     static ConsoleStyles _cc_ = new ConsoleStyles();
     public static Scanner input = new Scanner(System.in); 
+    public static Person g_per = null;
+    public static PassengerDetails g_perobj = null;
+    public static flightDetails g_fd = null;
+    public static FlightScheduler g_sch = null;
+    
+    public static void FilinDetails()
+    {
+    	PersonDetails g_cusTobj = new PersonDetails();
+    	g_cusTobj.sName = "Harry";
+    	g_cusTobj.sAddress = "LE16BH";
+    	g_cusTobj.nAge = 9;
+    	g_cusTobj.nPhoneNumber = "7401562876";  
+    	Person g_per = new Person(g_cusTobj);
+    	ProjectDB.insert(g_per);
+    	g_fd = new flightDetails("CHN", "LDN",  "12:10",  "11:10", 100);
+    	ProjectDB.insert(g_fd);
+		String date = "12/1/2022";
+		g_sch = new FlightScheduler(g_fd, date);
+		ProjectDB.insert(g_sch);
+		g_perobj = new PassengerDetails(g_per, g_sch.nflight_number);
+		ProjectDB.insert(g_perobj);
+			  
+    }
     
     public static void main(String[] args) 
     {
+    	FilinDetails();
     	printHeadUI();
-        printMenuUI();
+        printMenuUI();       
     } 
 
     private static void exit_Message()
@@ -18,14 +42,14 @@ public class AirLineApp {
     	printMessage("Thanks! Welcome Again");
     }
 
-    private static void printHeadUI() 
+    public static void printHeadUI() 
     {
     	printMessage("****************************************"+_cc_.RESET);
     	printBold(_cc_.BLACK_BOLD + "       Ailine Application System       " +_cc_.RESET);
     	printBold("****************************************"+_cc_.RESET);
     	printBold("\n");
     }
-    private static boolean choiceMenuUI(int choice)
+    public static boolean choiceMenuUI(int choice)
     {
     	if(choice > 0 && choice < 4)
     	{
