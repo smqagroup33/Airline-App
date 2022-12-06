@@ -2590,18 +2590,18 @@ public class AirLineTestBB {
 		org.junit.Assert.assertTrue(AirLineApp.choicePassengerUI(6));
 		
 		AirLineApp.input = new Scanner("H\nA\n3\n2\n7\n3\n");
-		AirLineApp.choicePassengerUI(1);
+		org.junit.Assert.assertTrue(AirLineApp.choicePassengerUI(1));
 		
 		//====================
 		AirLineApp.FilinDetails();
 		//AirlineReservationSystem.ProjectDB.personlst.add(AirLineApp.g_per);
-		AirlineReservationSystem.ProjectDB.passengerlst.add(AirLineApp.g_perobj);
-		AirlineReservationSystem.ProjectDB.flightdetlst.add(AirLineApp.g_fd);
-		AirlineReservationSystem.ProjectDB.flightSchedulerlst.add(AirLineApp.g_sch);
+		org.junit.Assert.assertTrue(AirlineReservationSystem.ProjectDB.passengerlst.add(AirLineApp.g_perobj));
+		org.junit.Assert.assertTrue(AirlineReservationSystem.ProjectDB.flightdetlst.add(AirLineApp.g_fd));
+		org.junit.Assert.assertTrue(AirlineReservationSystem.ProjectDB.flightSchedulerlst.add(AirLineApp.g_sch));
 		org.junit.Assert.assertFalse(AirlineReservationSystem.ProjectDB.insert(AirLineApp.g_per));
 		org.junit.Assert.assertTrue(AirlineReservationSystem.ProjectDB.insert(AirLineApp.g_perobj));
-		AirlineReservationSystem.ProjectDB.insert(AirLineApp.g_fd);
-		AirlineReservationSystem.ProjectDB.insert(AirLineApp.g_perobj);
+		org.junit.Assert.assertTrue(AirlineReservationSystem.ProjectDB.insert(AirLineApp.g_fd));
+		org.junit.Assert.assertTrue(AirlineReservationSystem.ProjectDB.insert(AirLineApp.g_perobj));
 		
         org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
         org.junit.Assert.assertEquals("'" + boolean3 + "' != '" + true + "'", boolean3, true);
