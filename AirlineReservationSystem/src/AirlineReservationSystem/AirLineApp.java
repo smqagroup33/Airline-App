@@ -8,7 +8,7 @@ public class AirLineApp {
     public static Scanner input = new Scanner(System.in); 
     public static Person g_per = null;
     public static PassengerDetails g_perobj = null;
-    public static flightDetails g_fd = null;
+    public static FlightDetails g_fd = null;
     public static FlightScheduler g_sch = null;
      
     public static void FilinDetails()
@@ -20,7 +20,7 @@ public class AirLineApp {
     	g_cusTobj.nPhoneNumber = "7401562876";  
     	Person g_per = new Person(g_cusTobj);
     	ProjectDB.insert(g_per);
-    	g_fd = new flightDetails("CHN", "LDN",  "12:10",  "11:10", 100);
+    	g_fd = new FlightDetails("CHN", "LDN",  "12:10",  "11:10", 100);
     	ProjectDB.insert(g_fd);
 		String date = "12/1/2022";
 		g_sch = new FlightScheduler(g_fd, date);
@@ -315,7 +315,7 @@ public class AirLineApp {
 	              int prevSize = ProjectDB.flightdetlst.size();
 	              try 
 	              {
-	                  ProjectDB.insert(new flightDetails(from, to, depTime, arrTime, cap));
+	                  ProjectDB.insert(new FlightDetails(from, to, depTime, arrTime, cap));
 	              } 
 	              catch (Exception ex) 
 	              {
@@ -331,12 +331,12 @@ public class AirLineApp {
 	
 	          case 2:
 	              System.out.println("--- FLIGHT DESCRIPTION TABLE  ---");
-	              flightDetails.show_FlightDetails();
+	              FlightDetails.show_FlightDetails();
 	              printFlightsMenuUI();
 	              break;
 	          case 3:
 	              System.out.println("--- FLIGHT DESCRIPTION TABLE ---");
-	              flightDetails.show_FlightDetails();
+	              FlightDetails.show_FlightDetails();
 	              if (ProjectDB.flightdetlst.size() == 0) {
 	                  printFlightsMenuUI();
 	              }
@@ -353,7 +353,7 @@ public class AirLineApp {
 	              break;
 	          case 4:
 	              System.out.println("--  FLIGHT DESCRIPTION TABLE  ---");
-	              flightDetails.show_FlightDetails();
+	              FlightDetails.show_FlightDetails();
 	              if (ProjectDB.flightdetlst.size() == 0) {
 	                  printFlightsMenuUI();
 	              }
@@ -364,7 +364,7 @@ public class AirLineApp {
 	                      index = input.nextInt();
 	                  } while (index < 1 || index > ProjectDB.flightdetlst.size());
 	                  
-	                  flightDetails fd = ProjectDB.flightdetlst.get(index - 1);
+	                  FlightDetails fd = ProjectDB.flightdetlst.get(index - 1);
 	                
 	                  String date;
 	

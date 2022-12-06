@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.junit.jupiter.api.Test;
-import AirlineReservationSystem.flightDetails;
+import AirlineReservationSystem.FlightDetails;
 import AirlineReservationSystem.PassengerDetails;
 import AirlineReservationSystem.Person;
 import AirlineReservationSystem.PersonDetails;
@@ -53,11 +53,11 @@ class AirLineTest {
 	@Test
 	void validateAddFlightDescription() {
 		int count = ProjectDB.flightdetlst.size();
-		flightDetails flights = new flightDetails("London", "Glasgow", "10.30", "12.30", 123);
+		FlightDetails flights = new FlightDetails("London", "Glasgow", "10.30", "12.30", 123);
 		ProjectDB.insert(flights);
 		assertEquals(count + 1, ProjectDB.flightdetlst.size());
 		count = ProjectDB.flightdetlst.size();
-		ProjectDB.insert(new flightDetails("London", "Glasgow", "10.30", "12.30", 123));
+		ProjectDB.insert(new FlightDetails("London", "Glasgow", "10.30", "12.30", 123));
 		assertEquals(count, ProjectDB.flightdetlst.size());
 
 	}
@@ -65,7 +65,7 @@ class AirLineTest {
 	@Test
 	void validateScheduleFlight() {
 		int count = ProjectDB.flightSchedulerlst.size();
-		flightDetails flights = new flightDetails("London", "Glasgow", "10.30", "12.30", 123);
+		FlightDetails flights = new FlightDetails("London", "Glasgow", "10.30", "12.30", 123);
 		FlightScheduler schFlight = new FlightScheduler(flights, "12332");
 		ProjectDB.insert(schFlight);
 		assertEquals(count + 1, ProjectDB.flightSchedulerlst.size());

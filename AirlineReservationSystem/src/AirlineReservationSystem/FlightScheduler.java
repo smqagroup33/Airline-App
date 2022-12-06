@@ -1,11 +1,11 @@
 package AirlineReservationSystem;
 
-public class FlightScheduler extends flightDetails 
+public class FlightScheduler extends FlightDetails 
 {
     public String sdate;
     public int nflight_number;
 
-    public FlightScheduler(flightDetails Flightdesc, String s_date) 
+    public FlightScheduler(FlightDetails Flightdesc, String s_date) 
     {
         super(Flightdesc.sfrom, Flightdesc.sto, Flightdesc.sdeparture_time, Flightdesc.sarrival_time, Flightdesc.ncapacity);
         this.sdate = s_date;

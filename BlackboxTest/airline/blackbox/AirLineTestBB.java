@@ -1154,180 +1154,180 @@ public class AirLineTestBB {
         org.junit.Assert.assertEquals("'" + boolean2 + "' != '" + false + "'", boolean2, false);
     }
     @Test
-    public void flightDetails01() throws Throwable {
+    public void FlightDetails01() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails01");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        java.lang.String str6 = flightDetails5.sto;
-        flightDetails5.setCapacity((int) (byte) -1);
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails01");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        java.lang.String str6 = FlightDetails5.sto;
+        FlightDetails5.setCapacity((int) (byte) -1);
         org.junit.Assert.assertEquals("'" + str6 + "' != '" + "" + "'", str6, "");
     }
 
     @Test
-    public void flightDetails02() throws Throwable {
+    public void FlightDetails02() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails02");
-        AirlineReservationSystem.flightDetails.show_FlightDetails();
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails02");
+        AirlineReservationSystem.FlightDetails.show_FlightDetails();
     }
 
     @Test
-    public void flightDetails03() throws Throwable {
+    public void FlightDetails03() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails03");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        flightDetails5.sarrival_time = "";
-        java.lang.String str8 = flightDetails5.sto;
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails03");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        FlightDetails5.sarrival_time = "";
+        java.lang.String str8 = FlightDetails5.sto;
         org.junit.Assert.assertEquals("'" + str8 + "' != '" + "" + "'", str8, "");
     }
 
     @Test
-    public void flightDetails04() throws Throwable {
+    public void FlightDetails04() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails04");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("", "hi!", "", "hi!", (int) (byte) -1);
-        java.lang.String str6 = flightDetails5.sarrival_time;
-        java.lang.String str7 = flightDetails5.getDeparture_time();
-        java.lang.String str8 = flightDetails5.getFrom();
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails04");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("", "hi!", "", "hi!", (int) (byte) -1);
+        java.lang.String str6 = FlightDetails5.sarrival_time;
+        java.lang.String str7 = FlightDetails5.getDeparture_time();
+        java.lang.String str8 = FlightDetails5.getFrom();
         org.junit.Assert.assertEquals("'" + str6 + "' != '" + "hi!" + "'", str6, "hi!");
         org.junit.Assert.assertEquals("'" + str7 + "' != '" + "" + "'", str7, "");
         org.junit.Assert.assertEquals("'" + str8 + "' != '" + "" + "'", str8, "");
     }
 
     @Test
-    public void flightDetails05() throws Throwable {
+    public void FlightDetails05() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails05");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("", "hi!", "", "hi!", (int) (byte) -1);
-        java.lang.String str6 = flightDetails5.sarrival_time;
-        java.lang.String str7 = flightDetails5.getDeparture_time();
-        int int8 = flightDetails5.getCapacity();
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails05");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("", "hi!", "", "hi!", (int) (byte) -1);
+        java.lang.String str6 = FlightDetails5.sarrival_time;
+        java.lang.String str7 = FlightDetails5.getDeparture_time();
+        int int8 = FlightDetails5.getCapacity();
         org.junit.Assert.assertEquals("'" + str6 + "' != '" + "hi!" + "'", str6, "hi!");
         org.junit.Assert.assertEquals("'" + str7 + "' != '" + "" + "'", str7, "");
         org.junit.Assert.assertTrue("'" + int8 + "' != '" + (-1) + "'", int8 == (-1));
     }
 
     @Test
-    public void flightDetails06() throws Throwable {
+    public void FlightDetails06() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails06");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        flightDetails5.sto = "hi!";
-        flightDetails5.setCapacity((int) (short) 100);
-        java.lang.String str10 = flightDetails5.sarrival_time;
-        java.lang.String str11 = flightDetails5.getArrival_time();
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails06");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        FlightDetails5.sto = "hi!";
+        FlightDetails5.setCapacity((int) (short) 100);
+        java.lang.String str10 = FlightDetails5.sarrival_time;
+        java.lang.String str11 = FlightDetails5.getArrival_time();
         org.junit.Assert.assertEquals("'" + str10 + "' != '" + "" + "'", str10, "");
         org.junit.Assert.assertEquals("'" + str11 + "' != '" + "" + "'", str11, "");
     }
 
     @Test
-    public void flightDetails07() throws Throwable {
+    public void FlightDetails07() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails07");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        java.lang.String str6 = flightDetails5.sto;
-        flightDetails5.setArrival_time("");
-        flightDetails5.setDeparture_time("hi!");
-        flightDetails5.sdeparture_time = "";
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails07");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        java.lang.String str6 = FlightDetails5.sto;
+        FlightDetails5.setArrival_time("");
+        FlightDetails5.setDeparture_time("hi!");
+        FlightDetails5.sdeparture_time = "";
         org.junit.Assert.assertEquals("'" + str6 + "' != '" + "" + "'", str6, "");
     }
 
     @Test
-    public void flightDetails08() throws Throwable {
+    public void FlightDetails08() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails08");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        java.lang.String str6 = flightDetails5.sto;
-        flightDetails5.setArrival_time("");
-        flightDetails5.setDeparture_time("hi!");
-        flightDetails5.sto = "";
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails08");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        java.lang.String str6 = FlightDetails5.sto;
+        FlightDetails5.setArrival_time("");
+        FlightDetails5.setDeparture_time("hi!");
+        FlightDetails5.sto = "";
         org.junit.Assert.assertEquals("'" + str6 + "' != '" + "" + "'", str6, "");
     }
 
     @Test
-    public void flightDetails09() throws Throwable {
+    public void FlightDetails09() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails09");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        java.lang.String str6 = flightDetails5.sto;
-        flightDetails5.setArrival_time("");
-        java.lang.String str9 = flightDetails5.sarrival_time;
-        flightDetails5.setFrom("");
-        flightDetails5.setFrom("");
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails09");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        java.lang.String str6 = FlightDetails5.sto;
+        FlightDetails5.setArrival_time("");
+        java.lang.String str9 = FlightDetails5.sarrival_time;
+        FlightDetails5.setFrom("");
+        FlightDetails5.setFrom("");
         org.junit.Assert.assertEquals("'" + str6 + "' != '" + "" + "'", str6, "");
         org.junit.Assert.assertEquals("'" + str9 + "' != '" + "" + "'", str9, "");
     }
 
     @Test
-    public void flightDetails10() throws Throwable {
+    public void FlightDetails10() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails10");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        flightDetails5.sto = "hi!";
-        flightDetails5.setArrival_time("hi!");
-        flightDetails5.sarrival_time = "";
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails10");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        FlightDetails5.sto = "hi!";
+        FlightDetails5.setArrival_time("hi!");
+        FlightDetails5.sarrival_time = "";
     }
 
     @Test
-    public void flightDetails11() throws Throwable {
+    public void FlightDetails11() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails11");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        java.lang.String str6 = flightDetails5.sto;
-        flightDetails5.setArrival_time("");
-        java.lang.String str9 = flightDetails5.sarrival_time;
-        java.lang.Class<?> wildcardClass10 = flightDetails5.getClass();
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails11");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        java.lang.String str6 = FlightDetails5.sto;
+        FlightDetails5.setArrival_time("");
+        java.lang.String str9 = FlightDetails5.sarrival_time;
+        java.lang.Class<?> wildcardClass10 = FlightDetails5.getClass();
         org.junit.Assert.assertEquals("'" + str6 + "' != '" + "" + "'", str6, "");
         org.junit.Assert.assertEquals("'" + str9 + "' != '" + "" + "'", str9, "");
         org.junit.Assert.assertNotNull(wildcardClass10);
     }
 
     @Test
-    public void flightDetails12() throws Throwable {
+    public void FlightDetails12() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails12");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        flightDetails5.sto = "hi!";
-        flightDetails5.setArrival_time("");
-        java.lang.String str10 = flightDetails5.getArrival_time();
-        flightDetails5.sfrom = "hi!";
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails12");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        FlightDetails5.sto = "hi!";
+        FlightDetails5.setArrival_time("");
+        java.lang.String str10 = FlightDetails5.getArrival_time();
+        FlightDetails5.sfrom = "hi!";
         org.junit.Assert.assertEquals("'" + str10 + "' != '" + "" + "'", str10, "");
     }
 
     @Test
-    public void flightDetails13() throws Throwable {
+    public void FlightDetails13() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails13");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        flightDetails5.sdeparture_time = "";
-        flightDetails5.setCapacity((int) (short) 1);
-        flightDetails5.setFrom("");
-        flightDetails5.setDeparture_time("hi!");
-        flightDetails5.sto = "hi!";
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails13");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        FlightDetails5.sdeparture_time = "";
+        FlightDetails5.setCapacity((int) (short) 1);
+        FlightDetails5.setFrom("");
+        FlightDetails5.setDeparture_time("hi!");
+        FlightDetails5.sto = "hi!";
     }
 
     @Test
-    public void flightDetails14() throws Throwable {
+    public void FlightDetails14() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails14");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        flightDetails5.sto = "hi!";
-        flightDetails5.setArrival_time("");
-        java.lang.String str10 = flightDetails5.sto;
-        java.lang.String str11 = flightDetails5.getArrival_time();
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails14");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        FlightDetails5.sto = "hi!";
+        FlightDetails5.setArrival_time("");
+        java.lang.String str10 = FlightDetails5.sto;
+        java.lang.String str11 = FlightDetails5.getArrival_time();
         org.junit.Assert.assertEquals("'" + str10 + "' != '" + "hi!" + "'", str10, "hi!");
         org.junit.Assert.assertEquals("'" + str11 + "' != '" + "" + "'", str11, "");
     }
 
     @Test
-    public void flightDetails15() throws Throwable {
+    public void FlightDetails15() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails15");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        java.lang.String str6 = flightDetails5.sto;
-        flightDetails5.setArrival_time("");
-        java.lang.String str9 = flightDetails5.sarrival_time;
-        java.lang.String str10 = flightDetails5.getFrom();
-        java.lang.String str11 = flightDetails5.getTo();
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails15");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        java.lang.String str6 = FlightDetails5.sto;
+        FlightDetails5.setArrival_time("");
+        java.lang.String str9 = FlightDetails5.sarrival_time;
+        java.lang.String str10 = FlightDetails5.getFrom();
+        java.lang.String str11 = FlightDetails5.getTo();
         org.junit.Assert.assertEquals("'" + str6 + "' != '" + "" + "'", str6, "");
         org.junit.Assert.assertEquals("'" + str9 + "' != '" + "" + "'", str9, "");
         org.junit.Assert.assertEquals("'" + str10 + "' != '" + "hi!" + "'", str10, "hi!");
@@ -1335,64 +1335,64 @@ public class AirLineTestBB {
     }
 
     @Test
-    public void flightDetails16() throws Throwable {
+    public void FlightDetails16() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails16");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("", "hi!", "", "hi!", (int) (byte) -1);
-        java.lang.String str6 = flightDetails5.sarrival_time;
-        java.lang.String str7 = flightDetails5.getDeparture_time();
-        int int8 = flightDetails5.ncapacity;
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails16");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("", "hi!", "", "hi!", (int) (byte) -1);
+        java.lang.String str6 = FlightDetails5.sarrival_time;
+        java.lang.String str7 = FlightDetails5.getDeparture_time();
+        int int8 = FlightDetails5.ncapacity;
         org.junit.Assert.assertEquals("'" + str6 + "' != '" + "hi!" + "'", str6, "hi!");
         org.junit.Assert.assertEquals("'" + str7 + "' != '" + "" + "'", str7, "");
         org.junit.Assert.assertTrue("'" + int8 + "' != '" + (-1) + "'", int8 == (-1));
     }
 
     @Test
-    public void flightDetails17() throws Throwable {
+    public void FlightDetails17() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails17");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        java.lang.String str6 = flightDetails5.sto;
-        flightDetails5.setDeparture_time("hi!");
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails17");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        java.lang.String str6 = FlightDetails5.sto;
+        FlightDetails5.setDeparture_time("hi!");
         org.junit.Assert.assertEquals("'" + str6 + "' != '" + "" + "'", str6, "");
     }
 
     @Test
-    public void flightDetails18() throws Throwable {
+    public void FlightDetails18() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails18");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        flightDetails5.sdeparture_time = "";
-        flightDetails5.setCapacity((int) (short) 1);
-        java.lang.String str10 = flightDetails5.getFrom();
-        java.lang.String str11 = flightDetails5.sfrom;
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails18");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        FlightDetails5.sdeparture_time = "";
+        FlightDetails5.setCapacity((int) (short) 1);
+        java.lang.String str10 = FlightDetails5.getFrom();
+        java.lang.String str11 = FlightDetails5.sfrom;
         org.junit.Assert.assertEquals("'" + str10 + "' != '" + "hi!" + "'", str10, "hi!");
         org.junit.Assert.assertEquals("'" + str11 + "' != '" + "hi!" + "'", str11, "hi!");
     }
 
     @Test
-    public void flightDetails19() throws Throwable {
+    public void FlightDetails19() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails19");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        flightDetails5.sdeparture_time = "";
-        flightDetails5.setCapacity((int) (short) 1);
-        java.lang.String str10 = flightDetails5.getFrom();
-        java.lang.String str11 = flightDetails5.getTo();
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails19");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        FlightDetails5.sdeparture_time = "";
+        FlightDetails5.setCapacity((int) (short) 1);
+        java.lang.String str10 = FlightDetails5.getFrom();
+        java.lang.String str11 = FlightDetails5.getTo();
         org.junit.Assert.assertEquals("'" + str10 + "' != '" + "hi!" + "'", str10, "hi!");
         org.junit.Assert.assertEquals("'" + str11 + "' != '" + "" + "'", str11, "");
     }
 
     @Test
-    public void flightDetails20() throws Throwable {
+    public void FlightDetails20() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails20");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        java.lang.String str6 = flightDetails5.sto;
-        flightDetails5.setArrival_time("");
-        java.lang.String str9 = flightDetails5.sarrival_time;
-        java.lang.String str10 = flightDetails5.getFrom();
-        java.lang.String str11 = flightDetails5.sdeparture_time;
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails20");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        java.lang.String str6 = FlightDetails5.sto;
+        FlightDetails5.setArrival_time("");
+        java.lang.String str9 = FlightDetails5.sarrival_time;
+        java.lang.String str10 = FlightDetails5.getFrom();
+        java.lang.String str11 = FlightDetails5.sdeparture_time;
         org.junit.Assert.assertEquals("'" + str6 + "' != '" + "" + "'", str6, "");
         org.junit.Assert.assertEquals("'" + str9 + "' != '" + "" + "'", str9, "");
         org.junit.Assert.assertEquals("'" + str10 + "' != '" + "hi!" + "'", str10, "hi!");
@@ -1400,51 +1400,51 @@ public class AirLineTestBB {
     }
 
     @Test
-    public void flightDetails21() throws Throwable {
+    public void FlightDetails21() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails21");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("", "hi!", "", "hi!", (int) (byte) -1);
-        java.lang.String str6 = flightDetails5.sarrival_time;
-        java.lang.String str7 = flightDetails5.sdeparture_time;
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails21");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("", "hi!", "", "hi!", (int) (byte) -1);
+        java.lang.String str6 = FlightDetails5.sarrival_time;
+        java.lang.String str7 = FlightDetails5.sdeparture_time;
         org.junit.Assert.assertEquals("'" + str6 + "' != '" + "hi!" + "'", str6, "hi!");
         org.junit.Assert.assertEquals("'" + str7 + "' != '" + "" + "'", str7, "");
     }
 
     @Test
-    public void flightDetails22() throws Throwable {
+    public void FlightDetails22() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails22");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        flightDetails5.sdeparture_time = "";
-        int int8 = flightDetails5.ncapacity;
-        java.lang.String str9 = flightDetails5.getDeparture_time();
-        java.lang.String str10 = flightDetails5.sfrom;
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails22");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        FlightDetails5.sdeparture_time = "";
+        int int8 = FlightDetails5.ncapacity;
+        java.lang.String str9 = FlightDetails5.getDeparture_time();
+        java.lang.String str10 = FlightDetails5.sfrom;
         org.junit.Assert.assertTrue("'" + int8 + "' != '" + 97 + "'", int8 == 97);
         org.junit.Assert.assertEquals("'" + str9 + "' != '" + "" + "'", str9, "");
         org.junit.Assert.assertEquals("'" + str10 + "' != '" + "hi!" + "'", str10, "hi!");
     }
 
     @Test
-    public void flightDetails23() throws Throwable {
+    public void FlightDetails23() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails23");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        flightDetails5.sto = "hi!";
-        java.lang.String str8 = flightDetails5.sfrom;
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails23");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        FlightDetails5.sto = "hi!";
+        java.lang.String str8 = FlightDetails5.sfrom;
         org.junit.Assert.assertEquals("'" + str8 + "' != '" + "hi!" + "'", str8, "hi!");
     }
 
     @Test
-    public void flightDetails24() throws Throwable {
+    public void FlightDetails24() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.flightDetails24");
-        AirlineReservationSystem.flightDetails flightDetails5 = new AirlineReservationSystem.flightDetails("hi!", "", "hi!", "", (int) 'a');
-        java.lang.String str6 = flightDetails5.sto;
-        flightDetails5.setArrival_time("");
-        java.lang.String str9 = flightDetails5.sarrival_time;
-        flightDetails5.setFrom("");
-        flightDetails5.setArrival_time("hi!");
-        flightDetails5.setFrom("");
+            System.out.format("%n%s%n", "RegressionTest0.FlightDetails24");
+        AirlineReservationSystem.FlightDetails FlightDetails5 = new AirlineReservationSystem.FlightDetails("hi!", "", "hi!", "", (int) 'a');
+        java.lang.String str6 = FlightDetails5.sto;
+        FlightDetails5.setArrival_time("");
+        java.lang.String str9 = FlightDetails5.sarrival_time;
+        FlightDetails5.setFrom("");
+        FlightDetails5.setArrival_time("hi!");
+        FlightDetails5.setFrom("");
         org.junit.Assert.assertEquals("'" + str6 + "' != '" + "" + "'", str6, "");
         org.junit.Assert.assertEquals("'" + str9 + "' != '" + "" + "'", str9, "");
     }
@@ -1452,8 +1452,8 @@ public class AirLineTestBB {
     public void ProjectDB01() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.ProjectDB01");
-        AirlineReservationSystem.flightDetails flightDetails0 = null;
-        java.lang.Boolean boolean1 = AirlineReservationSystem.ProjectDB.insert(flightDetails0);
+        AirlineReservationSystem.FlightDetails FlightDetails0 = null;
+        java.lang.Boolean boolean1 = AirlineReservationSystem.ProjectDB.insert(FlightDetails0);
         org.junit.Assert.assertEquals("'" + boolean1 + "' != '" + false + "'", boolean1, false);
     }
 
@@ -1499,8 +1499,8 @@ public class AirLineTestBB {
     public void ProjectDB06() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.ProjectDB06");
-        java.util.ArrayList<AirlineReservationSystem.flightDetails> flightDetailsList0 = null;
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList0;
+        java.util.ArrayList<AirlineReservationSystem.FlightDetails> FlightDetailsList0 = null;
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList0;
     }
 
     @Test
@@ -1530,9 +1530,9 @@ public class AirLineTestBB {
     public void ProjectDB09() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.ProjectDB09");
-        java.util.ArrayList<AirlineReservationSystem.flightDetails> flightDetailsList0 = AirlineReservationSystem.ProjectDB.flightdetlst;
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList0;
-        org.junit.Assert.assertNull(flightDetailsList0);
+        java.util.ArrayList<AirlineReservationSystem.FlightDetails> FlightDetailsList0 = AirlineReservationSystem.ProjectDB.flightdetlst;
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList0;
+        org.junit.Assert.assertNull(FlightDetailsList0);
     }
 
     @Test
@@ -1600,14 +1600,14 @@ public class AirLineTestBB {
     public void ProjectDB15() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.ProjectDB15");
-        AirlineReservationSystem.flightDetails[] flightDetailsArray0 = new AirlineReservationSystem.flightDetails[] {};
-        java.util.ArrayList<AirlineReservationSystem.flightDetails> flightDetailsList1 = new java.util.ArrayList<AirlineReservationSystem.flightDetails>();
-        boolean boolean2 = java.util.Collections.addAll((java.util.Collection<AirlineReservationSystem.flightDetails>) flightDetailsList1, flightDetailsArray0);
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        java.lang.Class<?> wildcardClass6 = flightDetailsList1.getClass();
-        org.junit.Assert.assertNotNull(flightDetailsArray0);
+        AirlineReservationSystem.FlightDetails[] FlightDetailsArray0 = new AirlineReservationSystem.FlightDetails[] {};
+        java.util.ArrayList<AirlineReservationSystem.FlightDetails> FlightDetailsList1 = new java.util.ArrayList<AirlineReservationSystem.FlightDetails>();
+        boolean boolean2 = java.util.Collections.addAll((java.util.Collection<AirlineReservationSystem.FlightDetails>) FlightDetailsList1, FlightDetailsArray0);
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        java.lang.Class<?> wildcardClass6 = FlightDetailsList1.getClass();
+        org.junit.Assert.assertNotNull(FlightDetailsArray0);
         org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
         org.junit.Assert.assertNotNull(wildcardClass6);
     }
@@ -1774,9 +1774,9 @@ public class AirLineTestBB {
     public void ProjectDB27() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.ProjectDB27");
-        java.util.ArrayList<AirlineReservationSystem.flightDetails> flightDetailsList0 = AirlineReservationSystem.ProjectDB.flightdetlst;
-        java.lang.Class<?> wildcardClass1 = flightDetailsList0.getClass();
-        org.junit.Assert.assertNotNull(flightDetailsList0);
+        java.util.ArrayList<AirlineReservationSystem.FlightDetails> FlightDetailsList0 = AirlineReservationSystem.ProjectDB.flightdetlst;
+        java.lang.Class<?> wildcardClass1 = FlightDetailsList0.getClass();
+        org.junit.Assert.assertNotNull(FlightDetailsList0);
         org.junit.Assert.assertNotNull(wildcardClass1);
     }
 
@@ -1840,15 +1840,15 @@ public class AirLineTestBB {
     public void ProjectDB32() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.ProjectDB32");
-        AirlineReservationSystem.flightDetails[] flightDetailsArray0 = new AirlineReservationSystem.flightDetails[] {};
-        java.util.ArrayList<AirlineReservationSystem.flightDetails> flightDetailsList1 = new java.util.ArrayList<AirlineReservationSystem.flightDetails>();
-        boolean boolean2 = java.util.Collections.addAll((java.util.Collection<AirlineReservationSystem.flightDetails>) flightDetailsList1, flightDetailsArray0);
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        java.lang.Class<?> wildcardClass7 = flightDetailsList1.getClass();
-        org.junit.Assert.assertNotNull(flightDetailsArray0);
+        AirlineReservationSystem.FlightDetails[] FlightDetailsArray0 = new AirlineReservationSystem.FlightDetails[] {};
+        java.util.ArrayList<AirlineReservationSystem.FlightDetails> FlightDetailsList1 = new java.util.ArrayList<AirlineReservationSystem.FlightDetails>();
+        boolean boolean2 = java.util.Collections.addAll((java.util.Collection<AirlineReservationSystem.FlightDetails>) FlightDetailsList1, FlightDetailsArray0);
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        java.lang.Class<?> wildcardClass7 = FlightDetailsList1.getClass();
+        org.junit.Assert.assertNotNull(FlightDetailsArray0);
         org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
         org.junit.Assert.assertNotNull(wildcardClass7);
     }
@@ -1973,18 +1973,18 @@ public class AirLineTestBB {
     public void ProjectDB41() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.ProjectDB41");
-        AirlineReservationSystem.flightDetails[] flightDetailsArray0 = new AirlineReservationSystem.flightDetails[] {};
-        java.util.ArrayList<AirlineReservationSystem.flightDetails> flightDetailsList1 = new java.util.ArrayList<AirlineReservationSystem.flightDetails>();
-        boolean boolean2 = java.util.Collections.addAll((java.util.Collection<AirlineReservationSystem.flightDetails>) flightDetailsList1, flightDetailsArray0);
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        org.junit.Assert.assertNotNull(flightDetailsArray0);
+        AirlineReservationSystem.FlightDetails[] FlightDetailsArray0 = new AirlineReservationSystem.FlightDetails[] {};
+        java.util.ArrayList<AirlineReservationSystem.FlightDetails> FlightDetailsList1 = new java.util.ArrayList<AirlineReservationSystem.FlightDetails>();
+        boolean boolean2 = java.util.Collections.addAll((java.util.Collection<AirlineReservationSystem.FlightDetails>) FlightDetailsList1, FlightDetailsArray0);
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        org.junit.Assert.assertNotNull(FlightDetailsArray0);
         org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
@@ -1992,13 +1992,13 @@ public class AirLineTestBB {
     public void ProjectDB42() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.ProjectDB42");
-        AirlineReservationSystem.flightDetails[] flightDetailsArray0 = new AirlineReservationSystem.flightDetails[] {};
-        java.util.ArrayList<AirlineReservationSystem.flightDetails> flightDetailsList1 = new java.util.ArrayList<AirlineReservationSystem.flightDetails>();
-        boolean boolean2 = java.util.Collections.addAll((java.util.Collection<AirlineReservationSystem.flightDetails>) flightDetailsList1, flightDetailsArray0);
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        AirlineReservationSystem.ProjectDB.flightdetlst = flightDetailsList1;
-        java.lang.Class<?> wildcardClass5 = flightDetailsList1.getClass();
-        org.junit.Assert.assertNotNull(flightDetailsArray0);
+        AirlineReservationSystem.FlightDetails[] FlightDetailsArray0 = new AirlineReservationSystem.FlightDetails[] {};
+        java.util.ArrayList<AirlineReservationSystem.FlightDetails> FlightDetailsList1 = new java.util.ArrayList<AirlineReservationSystem.FlightDetails>();
+        boolean boolean2 = java.util.Collections.addAll((java.util.Collection<AirlineReservationSystem.FlightDetails>) FlightDetailsList1, FlightDetailsArray0);
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        AirlineReservationSystem.ProjectDB.flightdetlst = FlightDetailsList1;
+        java.lang.Class<?> wildcardClass5 = FlightDetailsList1.getClass();
+        org.junit.Assert.assertNotNull(FlightDetailsArray0);
         org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
         org.junit.Assert.assertNotNull(wildcardClass5);
     }

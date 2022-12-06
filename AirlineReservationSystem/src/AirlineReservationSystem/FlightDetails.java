@@ -1,8 +1,8 @@
 package AirlineReservationSystem;
 
-public class flightDetails {
+public class FlightDetails {
 
-	public String sfrom;
+	public String sfrom; 
 	public String sto;
 	public String sdeparture_time;
 	public String sarrival_time;
@@ -48,7 +48,7 @@ public class flightDetails {
 		this.ncapacity = capacity;
 	}
 
-	public flightDetails(String from, String to, String departureTime, String arrivalTime, int capacity) {
+	public FlightDetails(String from, String to, String departureTime, String arrivalTime, int capacity) {
 		this.sfrom = from;
 		this.sto = to;
 		this.sdeparture_time = departureTime;
@@ -82,7 +82,7 @@ public class flightDetails {
 		{
 			System.out.println("\t Warning : Flight descriptions Not Available");
 		}
-		for (flightDetails fd : ProjectDB.flightdetlst) 
+		for (FlightDetails fd : ProjectDB.flightdetlst) 
 		{
 			System.out.printf("%5d | %-20s | %-20s | %-10s | %-10s | %8d |\n", ++ncounter, fd.sfrom, fd.sto,
 					fd.sdeparture_time, fd.sarrival_time, fd.ncapacity);

@@ -6,7 +6,7 @@ public class ProjectDB {
 
 	public static ArrayList<Person> personlst = new ArrayList<>();
 	public static ArrayList<PassengerDetails> passengerlst = new ArrayList<>();
-	public static ArrayList<flightDetails> flightdetlst = new ArrayList<>();
+	public static ArrayList<FlightDetails> flightdetlst = new ArrayList<>();
 	public static ArrayList<FlightScheduler> flightSchedulerlst = new ArrayList<>();
 
 	public static Boolean insert(Person person) 
@@ -45,11 +45,11 @@ public class ProjectDB {
 		return false;
 	}
 
-	public static Boolean insert(flightDetails flight_desc) 
+	public static Boolean insert(FlightDetails flight_desc) 
 	{
 		if(flight_desc != null)
 		{
-			for (flightDetails flightObj : flightdetlst) 
+			for (FlightDetails flightObj : flightdetlst) 
 			{
 				if (flightObj.sarrival_time.equals(flight_desc.sarrival_time)
 						&& flightObj.sdeparture_time.equals(flight_desc.sdeparture_time) && flightObj.sfrom.equals(flight_desc.sfrom)
