@@ -2526,6 +2526,10 @@ public class AirLineTestBB {
             System.out.format("%n%s%n", "RegressionTest0.PassengerDetails39");
         java.lang.Boolean boolean2 = AirlineReservationSystem.Person.showHeaderLine((int) (byte) -1, 100);
         org.junit.Assert.assertEquals("'" + boolean2 + "' != '" + true + "'", boolean2, true);
+    	AirLineApp.input = new Scanner("5\n3\n");
+    	AirLineApp.printMenuUI();
+		AirLineApp.input = new Scanner("-1\n8\n3\n");
+		AirLineApp.printFlightsMenuUI();
     }
 
     @Test
@@ -2557,36 +2561,33 @@ public class AirLineTestBB {
         AirlineReservationSystem.AirLineApp.printHeadUI();
         org.junit.Assert.assertNotNull(passengerDetailsArray0);
         AirlineReservationSystem.AirLineApp.FilinDetails();
-    	AirLineApp.input = new Scanner("5\n3\n");
-		AirLineApp.printMenuUI();
-		AirLineApp.input = new Scanner("-1\n8\n3\n");
-		AirLineApp.printFlightsMenuUI();
+    
 		AirLineApp.input = new Scanner("7\n3\n");
-		AirLineApp.choicePassengerUI(2);
+		org.junit.Assert.assertTrue(AirLineApp.choicePassengerUI(2));
 		AirLineApp.input = new Scanner("7\n1\n7\n3\n");
-		AirLineApp.choicePassengerUI(3);
+		org.junit.Assert.assertTrue(AirLineApp.choicePassengerUI(3));
 		AirLineApp.input = new Scanner("9\n7\n3\n");
-		AirLineApp.choicePassengerUI(8);
-		AirLineApp.choicePassengerUI(9);
-		AirLineApp.choicePassengerUI(5);
+		org.junit.Assert.assertFalse(AirLineApp.choicePassengerUI(8));
+		org.junit.Assert.assertFalse(AirLineApp.choicePassengerUI(9));
+		org.junit.Assert.assertTrue(AirLineApp.choicePassengerUI(5));
 		AirLineApp.input = new Scanner("8\n3\n");
-		AirLineApp.flightMenuChoice(2);
+		org.junit.Assert.assertTrue(AirLineApp.flightMenuChoice(2));
 		AirLineApp.input = new Scanner("8\n3\n");
-		AirLineApp.flightMenuChoice(5);
+		org.junit.Assert.assertTrue(AirLineApp.flightMenuChoice(5));
 		AirLineApp.input = new Scanner("1\n8\n3\n");
-		AirLineApp.flightMenuChoice(7);
+		org.junit.Assert.assertTrue(AirLineApp.flightMenuChoice(7));
 		AirLineApp.input = new Scanner("8\n3\n");
-		AirLineApp.flightMenuChoice(9);
-		AirLineApp.choicePassengerUI(8);
+		org.junit.Assert.assertTrue(AirLineApp.flightMenuChoice(9));
+		org.junit.Assert.assertFalse(AirLineApp.choicePassengerUI(8));
 		AirlineReservationSystem.AirLineApp.FilinDetails();
 		AirLineApp.input = new Scanner("a\nb\nc\nd\n5\n8\n3\n");		
-		AirLineApp.flightMenuChoice(1);
+		org.junit.Assert.assertTrue(AirLineApp.flightMenuChoice(1));
 		AirLineApp.input = new Scanner("8\n3\n");		
-		AirLineApp.flightMenuChoice(8);
-		AirLineApp.flightMenuChoice(10);
+		org.junit.Assert.assertTrue(AirLineApp.flightMenuChoice(8));
+		org.junit.Assert.assertFalse(AirLineApp.flightMenuChoice(10));
 		
 		AirLineApp.input = new Scanner("1\n7\n3\n");
-		AirLineApp.choicePassengerUI(6);
+		org.junit.Assert.assertTrue(AirLineApp.choicePassengerUI(6));
 		
 		AirLineApp.input = new Scanner("H\nA\n3\n2\n7\n3\n");
 		AirLineApp.choicePassengerUI(1);
