@@ -2560,7 +2560,7 @@ public class AirLineTestBB {
         java.lang.Class<?> wildcardClass5 = passengerDetailsList1.getClass();
         AirlineReservationSystem.AirLineApp.printHeadUI();
         org.junit.Assert.assertNotNull(passengerDetailsArray0);
-        AirlineReservationSystem.AirLineApp.FilinDetails();
+        AirlineReservationSystem.AirLineApp.filinDetails();
     
 		AirLineApp.input = new Scanner("7\n3\n");
 		org.junit.Assert.assertTrue(AirLineApp.choicePassengerUI(2));
@@ -2579,7 +2579,7 @@ public class AirLineTestBB {
 		AirLineApp.input = new Scanner("8\n3\n");
 		org.junit.Assert.assertTrue(AirLineApp.flightMenuChoice(9));
 		org.junit.Assert.assertFalse(AirLineApp.choicePassengerUI(8));
-		AirlineReservationSystem.AirLineApp.FilinDetails();
+		AirlineReservationSystem.AirLineApp.filinDetails();
 		AirLineApp.input = new Scanner("a\nb\nc\nd\n5\n8\n3\n");		
 		org.junit.Assert.assertTrue(AirLineApp.flightMenuChoice(1));
 		AirLineApp.input = new Scanner("8\n3\n");		
@@ -2593,7 +2593,7 @@ public class AirLineTestBB {
 		org.junit.Assert.assertTrue(AirLineApp.choicePassengerUI(1));
 		
 		//====================
-		AirLineApp.FilinDetails();
+		AirLineApp.filinDetails();
 		//AirlineReservationSystem.ProjectDB.personlst.add(AirLineApp.g_per);
 		org.junit.Assert.assertTrue(AirlineReservationSystem.ProjectDB.passengerlst.add(AirLineApp.g_perobj));
 		org.junit.Assert.assertTrue(AirlineReservationSystem.ProjectDB.flightdetlst.add(AirLineApp.g_fd));
