@@ -2,16 +2,38 @@ package AirlineReservationSystem;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-
+/*Name : Airline 
+Description : Main Class , 
+Holds UI Part displaying menu and its functionalities*/ 
 public class AirLineApp { 
+
+	//Change Font styles
     static ConsoleStyles _cc_ = new ConsoleStyles();
+    
+    //Handle Input Stream
     public static Scanner input = new Scanner(System.in); 
-    public static Person g_per = null;
+
+    // Holds person Details
+    public static Person g_per = null;   
+    
+    //Person & His flight Details
     public static PassengerDetails g_perobj = null;
+    
+    //All available flight details 
     public static FlightDetails g_fd = null;
+    
+    //Maps FlightDetails with the person
     public static FlightScheduler g_sch = null;
      
-    public static void FilinDetails()
+	/*
+	 * Name : fillindetails 
+	 * Arguments : None
+	 * Return : None
+	 * Description : Adds the details of person, scheduled flight
+	 *  into projectDB
+	 */
+    
+    public static void filinDetails()
     {
     	PersonDetails g_cusTobj = new PersonDetails();
     	g_cusTobj.sName = "Harry";
@@ -29,19 +51,32 @@ public class AirLineApp {
 		ProjectDB.insert(g_perobj);
 			  
     }
+	/* Name : Main
+	 * Arguments : String[]
+	 * Return : None
+	 * Description : Entry point for application handle
+	 * CLI innput arguments*/
     
     public static void main(String[] args) 
     {
-    	FilinDetails();
+    	filinDetails();
     	printHeadUI();
         printMenuUI();       
     } 
 
+    /* Name : Exit Message
+	 * Arguments : None
+	 * Return : None
+	 * Description : Prints exit message */
     private static void exit_Message()
     {
     	printMessage("Thanks! Welcome Again");
     }
 
+    /* Name : PrintHeadUI
+	 * Arguments : None
+	 * Return : None
+	 * Description : print contents in bold*/
     public static void printHeadUI() 
     {
     	printMessage("****************************************"+_cc_.RESET);
@@ -49,6 +84,12 @@ public class AirLineApp {
     	printBold("****************************************"+_cc_.RESET);
     	printBold("\n");
     }
+    
+    /* Name : ChoicemenuUI
+	 * Arguments : int 
+	 * Return : Boolean 
+	 * Description : Handle user inputs and opens up relavant menu UI 
+	 * ReturnsTrue if Valid input / False - invalid Input*/
     public static boolean choiceMenuUI(int choice)
     {
     	if(choice > 0 && choice < 4)
@@ -72,6 +113,11 @@ public class AirLineApp {
     	return false;
     }
 
+    /* Name : getOptionFromUser
+	 * Arguments : Scanner
+	 * Return : int
+	 * Description : Handles user input Reads the data
+	 * returns -1 if input is ininvalid type ,1 if its valid */
     private static int getOptionFromUser(Scanner inOption)
     {
         System.out.print("Enter Your Choice : ");
@@ -88,6 +134,10 @@ public class AirLineApp {
         }
     } 
     
+    /* Name : printMenuUI
+	 * Arguments :  None
+	 * Return :  None
+	 * Description : Prints the Main Menu UI */
     public static void printMenuUI() 
     {
     	printBold(" --------  Main Menu  ---------");
@@ -99,22 +149,39 @@ public class AirLineApp {
         do{ } while (!choiceMenuUI(getOptionFromUser(input)));
     }
 
+    /* Name : printAlertBold
+	 * Arguments : string
+	 * Return : None
+	 * Description : Prints the input string in bold 
+	 *Red font Colour */
     private static void printAlertBold(String menu)
     {
     	printMessage(  _cc_.RED_BOLD  + menu + _cc_.RESET);
     }
     
+    /* Name : printMessage
+	 * Arguments : String
+	 * Return : None
+	 * Description : Prints message on screen*/
     private static void printMessage(String Message)
     {
     	System.out.println(Message);
     }
     
+    /* Name : printBold
+	 * Arguments : String
+	 * Return : Void
+	 * Description : prints the text in bold format */
     private static void printBold(String menu)
     {
     	printMessage( _cc_.BLACK_BOLD + menu + _cc_.RESET);
     }
 
-    
+    /* Name : choicePassengerUI
+	 * Arguments : int
+	 * Return : Boolean
+	 * Description : Handles Passenger menu, Procceed until
+	 * the user enters the valid input */
     public static boolean choicePassengerUI(int option) 
     {
     	if(option > 0 && option < 8)
@@ -273,6 +340,11 @@ public class AirLineApp {
     	return false;
     }
     
+    /* Name : printPassengerUI
+	 * Arguments : None
+	 * Return : None
+	 * Description : Prints the statements , Procceds if the
+	 * user enters a valid input*/
     public static void printPassengerUI() {
     	printBold(" --------  Passengers Menu  ---------");
     	printBold("1. Add New Customer");
@@ -287,6 +359,11 @@ public class AirLineApp {
           
     }
 
+    /* Name : flightMenuChoice
+	 * Arguments : int
+	 * Return : Boolean
+	 * Description : Prints flight menu UI 
+	 * Prints menu and false if user enters invalid*/
     public static boolean flightMenuChoice(int choice)
     {
     	if(choice > 0 && choice < 10)
@@ -436,6 +513,11 @@ public class AirLineApp {
 
     }
     
+    /* Name : printFlightsMenuUI
+	 * Arguments : None
+	 * Return : Void
+	 * Description : Print the Flight menu, 
+	 * Repeats until the user enters a valid input*/
     public static void printFlightsMenuUI() 
     {
     	printBold("----  Flight Management Menu  -----");
