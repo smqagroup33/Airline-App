@@ -2,13 +2,21 @@ package AirlineReservationSystem;
 
 import java.util.ArrayList;
 
+/*Name : ProjectDB 
+Description : Class which holds input the data of person and flights*/ 
 public class ProjectDB {
 
+	//person attributes
 	public static ArrayList<Person> personlst = new ArrayList<>();
 	public static ArrayList<PassengerDetails> passengerlst = new ArrayList<>();
 	public static ArrayList<FlightDetails> flightdetlst = new ArrayList<>();
 	public static ArrayList<FlightScheduler> flightSchedulerlst = new ArrayList<>();
 
+	 /* Name : insert
+	 * Arguments : Person
+	 * Return : Boolean
+	 * Description : Inserts person attributes if the person attributes 
+	 *exist already returns FALSE else True */
 	public static Boolean insert(Person person) 
 	{
 		if(person != null)
@@ -27,6 +35,11 @@ public class ProjectDB {
 		return false;
 	}
  
+	 /* Name : insert
+	 * Arguments : PassengerDetails
+	 * Return : Boolean
+	 * Description : Inserts Passenger object ,Return True 
+	 * if data does not exist else false*/
 	public static Boolean insert(PassengerDetails passenger) 
 	{
 		if(passenger != null)
@@ -45,6 +58,11 @@ public class ProjectDB {
 		return false;
 	}
 
+	 /* Name : insert
+	 * Arguments : FlightDetails
+	 * Return : Boolean
+	 * Description : Insert flightdetails return False if data exist 
+	 * else True */
 	public static Boolean insert(FlightDetails flight_desc) 
 	{
 		if(flight_desc != null)
@@ -64,6 +82,11 @@ public class ProjectDB {
 		return false;
 	}
 
+	/* Name : insert
+	 * Arguments : PassengerDetails
+	 * Return : Boolean
+	 * Description : insert Flightscheduler object returns True 
+	 * if new data else False*/
 	public static Boolean insert(FlightScheduler flightsc) 
 	{
 		if(flightsc != null)
