@@ -2,8 +2,11 @@ package AirlineReservationSystem;
 import java.util.ArrayList;
 import java.lang.reflect.Array;
 
+/*Name : Person 
+Description : Gets and set the attribites fo person */ 
 public class Person {
 
+	//Details object which holds the person details
 	public PersonDetails persnDet = null;
 
 	public Person(PersonDetails Details) 
@@ -11,6 +14,12 @@ public class Person {
 		this.persnDet = Details;
 	}
 
+	/*
+	 * Name : showBodyLine 
+	 * Arguments : int , int
+	 * Return : boolean
+	 * Description : Prints the body line on the screen
+	 * */
 	public static Boolean showBodyLine(int itr , int nTotalCol)
 	{
 		if(itr < nTotalCol)
@@ -31,6 +40,13 @@ public class Person {
 		}
 		return false;
 	}
+	
+	/*
+	 * Name : showHeaderLine 
+	 * Arguments : int , int
+	 * Return : boolean
+	 * Description : Prints the Header line on the screen
+	 * */
 	public static  Boolean showHeaderLine(int itr , int nTotalCol)
 	{
 		if(itr < nTotalCol)
@@ -45,6 +61,12 @@ public class Person {
 		return false;
 	}
 	
+	/*
+	 * Name : showPersonTable 
+	 * Arguments :void
+	 * Return : void 
+	 * Description : show the person attributes as table
+	 * */
 	public static void showPersonTable() 
 	{		
 		int nTotalCol = 100;
@@ -65,6 +87,13 @@ public class Person {
 		showHeaderLine(itr,nTotalCol);
 		System.out.println();
 	}
+	
+	/*
+	 * Name : IteratePersonObject 
+	 * Arguments :ArrayList
+	 * Return : Boolean 
+	 * Description : Find if the person object is exist returns true else false
+	 * */
 	public static Boolean IteratePersonObject(ArrayList<Person> personlst)
 	{
 		int ncntr = 0;

@@ -3,8 +3,12 @@ import java.util.List;
 import java.util.ArrayList;
 
 
+/*Name : PassengerDetails 
+Description : Child class of Person , 
+Passengedetails maps person with the flight number*/ 
 public class PassengerDetails extends Person 
 {
+	//Flight number as string 
 	public int nflight_number;
 
 	public PassengerDetails(Person perObj, int nflight_number) {
@@ -12,6 +16,12 @@ public class PassengerDetails extends Person
 		this.nflight_number = nflight_number;
 	}
 
+	/*
+	 * Name : FlightScheduler 
+	 * Arguments : int
+	 * Return : int
+	 * Description : iterate the passenger details and returns the count
+	 * */
 	public static int getSCFlightPassengersCount(int nflight_num) 
 	{
 		int ncounter = 0;
@@ -25,6 +35,13 @@ public class PassengerDetails extends Person
 		return ncounter;
 
 	}
+	
+	/*
+	 * Name : show_PassengerDetails 
+	 * Arguments : None
+	 * Return : Void
+	 * Description : Show the passenger details as table
+	 * */
 	public static void show_PassengerDetails() 
 	{
 		int ncounter = 0;
@@ -63,6 +80,12 @@ public class PassengerDetails extends Person
 		System.out.println();
 	}
 
+	/*
+	 * Name : insertPassengerList 
+	 * Arguments : ArrayList<PassengerDetails>
+	 * Return : ArrayList<PassengerDetails>
+	 * Description : Insert details into passengerLsit map
+	 * */
 	public static ArrayList<PassengerDetails> insertPassengerList(ArrayList<PassengerDetails> passengerlst , int nflight_num)
 	{
 		if(passengerlst != null)
@@ -80,6 +103,13 @@ public class PassengerDetails extends Person
 		return null;
 	}
 		
+	/*
+	 * Name : showFlightNumber 
+	 * Arguments : int
+	 * Return : List
+	 * Description : Prints the relavant passenger 
+	 * details from PassengerList
+	 * */
 	public static List showFlightNumber(int nflight_num) 
 	{
 		ArrayList<PassengerDetails> PassengerList = insertPassengerList(ProjectDB.passengerlst,nflight_num);
@@ -108,6 +138,12 @@ public class PassengerDetails extends Person
 		return PassengerList;
 	}
 
+	/*
+	 * Name : printPassengerDetails 
+	 * Arguments : ArrayList
+	 * Return : Boolean
+	 * Description : Iterates passenger details to print Data
+	 * */
 	public static Boolean printPassengerDetails(ArrayList<PassengerDetails> PassengerList )
 	{
 		int ncounter = 0;
