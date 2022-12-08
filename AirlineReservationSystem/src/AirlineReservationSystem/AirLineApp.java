@@ -5,7 +5,7 @@ import java.util.InputMismatchException;
 /*Name : Airline 
 Description : Main Class , 
 Holds UI Part displaying menu and its functionalities*/ 
-public class AirLineApp { 
+public class AirLineApp {  
 
 	//Change Font styles
     static ConsoleStyles _cc_ = new ConsoleStyles();
@@ -32,7 +32,7 @@ public class AirLineApp {
 	 * Description : Adds the details of person, scheduled flight
 	 *  into projectDB
 	 */
-    
+     
     public static void filinDetails()
     {
     	PersonDetails g_cusTobj = new PersonDetails();
@@ -44,7 +44,7 @@ public class AirLineApp {
     	ProjectDB.insert(g_per);
     	g_fd = new FlightDetails("CHN", "LDN",  "12:10",  "11:10", 100);
     	ProjectDB.insert(g_fd);
-		String date = "12/1/2022";
+		String date = "12/1/2022"; 
 		g_sch = new FlightScheduler(g_fd, date);
 		ProjectDB.insert(g_sch);
 		g_perobj = new PassengerDetails(g_per, g_sch.nflight_number);
@@ -227,7 +227,7 @@ public class AirLineApp {
 		                   printPassengerUI();
 		                   System.out.println("Warning : No Passanger Avaialable.");
 		               }
-		               else 
+		               else  
 		               { 
 		               	do {
 		               		printMessage("Enter valid index value :");

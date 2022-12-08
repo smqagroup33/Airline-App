@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /*Name : ProjectDB 
 Description : Class which holds input the data of person and flights*/ 
-public class ProjectDB {
+public class ProjectDB { 
 
 	//person attributes
 	public static ArrayList<Person> personlst = new ArrayList<>();

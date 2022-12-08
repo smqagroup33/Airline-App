@@ -233,6 +233,14 @@ class AirLineTest {
 	}
 
 	@Test
+	void validateFlight_menu_case3() {
+		AirLineApp.input = new Scanner("2\n3\n1\n8\n3\n");
+		AirLineApp.printMenuUI();
+		AirLineApp.input = new Scanner(System.in);
+	}
+
+	
+	@Test
 	void validateFlight_menu_case5() {
 		AirLineApp.input = new Scanner("2\n5\n8\n3\n");
 		AirLineApp.printMenuUI();
@@ -249,6 +257,27 @@ class AirLineTest {
 	@Test
 	void validateFlight_menu_caseInvlaid() {
 		AirLineApp.input = new Scanner("2\n10\n8\n3\n");
+		AirLineApp.printMenuUI();
+		AirLineApp.input = new Scanner(System.in);
+	}
+	@Test
+	void validateMain_menu_case9() {
+		AirLineApp.filinDetails();
+		AirLineApp.printHeadUI();
+		AirLineApp.input = new Scanner("-1\n3\n");
+		String[] args = new String[2];
+		AirLineApp.main(args);
+	}
+	@Test
+	void validateFlight_caseMenu6() {
+		AirLineApp.input = new Scanner("2\n6\n1\n8\n3\n");
+		AirLineApp.printMenuUI();
+		AirLineApp.input = new Scanner(System.in);
+	}
+	
+	@Test
+	void validateFlight_caseMenu7() {
+		AirLineApp.input = new Scanner("2\n7\n1\n8\n3\n");
 		AirLineApp.printMenuUI();
 		AirLineApp.input = new Scanner(System.in);
 	}
