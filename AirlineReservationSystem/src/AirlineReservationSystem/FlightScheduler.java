@@ -1,10 +1,21 @@
 package AirlineReservationSystem;
 
+/*Name : FlightScheduler 
+Description : Child class of FlightDetails, 
+Schedules flights with passengers*/ 
 public class FlightScheduler extends FlightDetails 
 {
+	// date as string format
     public String sdate;
+    //flight number as integer
     public int nflight_number;
 
+	/*
+	 * Name : FlightScheduler 
+	 * Arguments : FlightDetails , String
+	 * Return : None
+	 * Description : Create a instance of FlightScheduler class
+	 * */
     public FlightScheduler(FlightDetails Flightdesc, String s_date) 
     {
         super(Flightdesc.sfrom, Flightdesc.sto, Flightdesc.sdeparture_time, Flightdesc.sarrival_time, Flightdesc.ncapacity);
@@ -12,6 +23,12 @@ public class FlightScheduler extends FlightDetails
         this.nflight_number = generateFlightNumber();
     }
 
+    /*
+	 * Name : generateFlightNumber 
+	 * Arguments :None
+	 * Return : None
+	 * Description : Generates flight number flightSchedulerlst map
+	 * */
    public static int generateFlightNumber() 
    {
         int nmax = 0;
@@ -25,6 +42,12 @@ public class FlightScheduler extends FlightDetails
         return nmax + 1;
     }
 
+   /*
+ 	 * Name : showFlightSchedulerTable 
+ 	 * Arguments : None
+ 	 * Return : None
+ 	 * Description : Show details from flightSchedulerlst list
+ 	 * */
     public static void showFlightSchedulerTable() 
     {
         int ncounter = 0;

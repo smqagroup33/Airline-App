@@ -1,5 +1,8 @@
 package AirlineReservationSystem;
 
+
+/*Name : ConsoleStyles 
+Description : Handles the font attributes*/ 
 public class ConsoleStyles 
 {
 	public String RESET="\033[0m";
