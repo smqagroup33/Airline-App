@@ -65,3 +65,6 @@ This generates Ecore model as show below.
 
 5. Run As - > Junit Test “DomainDSLParsingTest.java”. Executes the test case for XTEXT grammar
 <img width="788" alt="image" src="https://user-images.githubusercontent.com/36292275/208297389-c4c71dbd-d0b2-4061-b22c-edd787108ecc.png">
+
+
+#no new changes Made
